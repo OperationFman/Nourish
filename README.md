@@ -25,15 +25,15 @@ Additionally, I'd like to learn typescript which feeds well into GraphQL, overki
 
 
 # Tech Stack
-* Front end
-** Javascript / Typescript
-** ReactJS
-** GraphQL
-** Redux
+## Front end
+* Javascript / Typescript
+* ReactJS
+* GraphQL
+* Redux
 
-* Backend
-** Java
-** Springboot
+## Backend
+* Java
+* Springboot
 
-* Database
-** Postgres
+## Database
+* Postgres
