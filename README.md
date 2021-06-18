@@ -1,6 +1,6 @@
 # Context
-Nourish is a simple webapp to neatly display recipes ass by logged in authors.
-The main feel allows the preusal of variousn recipes via a ordering prefernce, these are;
+Nourish is a simple webapp to neatly display recipes written by other users.
+The main feed allows the perusal of various recipes via a ordering preference, these are;
 * Newest
 * Alphabetical
 * Cost
