@@ -1,8 +1,8 @@
 import React from "react"
 import "./Navbar.css"
 
-const Navbar = () => (
-  <nav className="navbar">
+const Navbar = ({ sticky }) => (
+  <nav className={sticky ? "navbar navbar-sticky" : "navbar"}>
     <div className="navbar--logo-holder">
       <h1> Nourish </h1>
     </div>
