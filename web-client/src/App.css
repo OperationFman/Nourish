@@ -19,3 +19,11 @@
   color: white;
 }
 
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.grid-item-1 {
+  grid-column: 1 / -1;
+}
