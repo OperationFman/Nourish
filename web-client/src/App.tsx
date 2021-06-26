@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import Card from './components/feed/card';
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
     //     {/* Feed component */}
     // </div>
     <div className="grid-container animated-grid">
-      <div className="card responsive-scale" style={{backgroundImage:``}}></div>
+      <div className="card responsive-scale" style={{backgroundImage:``}}><Card /></div>
       <div className="card responsive-scale"></div>
       <div className="card responsive-scale"></div>
       <div className="card responsive-scale"></div>
