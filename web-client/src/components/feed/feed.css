@@ -74,7 +74,7 @@
 }
 
 .dummy-card-title {
-    background: rgb(190, 190, 190);
+    background: rgb(220, 220, 220);
     width: 50%;
     border-radius: 8px;
     position: absolute;
@@ -83,7 +83,7 @@
 }
 
 .dummy-card-price {
-    background: rgb(200, 200, 200);
+    background: rgb(220, 220, 220);
     width: 30%;
     border-radius: 8px;
     position: absolute;
@@ -92,7 +92,7 @@
 }
 
 .dummy-card-time {
-    background: rgb(200, 200, 200);
+    background: rgb(220, 220, 220);
     width: 20%;
     border-radius: 8px;
     position: absolute;
