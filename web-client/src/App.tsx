@@ -13,18 +13,18 @@ function App() {
     //     {/* Feed component */}
     // </div>
     <div className="grid-container animated-grid">
-      <div className="card responsive-scale" style={{backgroundImage:``}}><Card /></div>
-      <div className="card responsive-scale"></div>
-      <div className="card responsive-scale"></div>
-      <div className="card responsive-scale"></div>
-      <div className="card responsive-scale"></div>
-      <div className="card responsive-scale"></div>
-      <div className="card responsive-scale"></div>
-      <div className="card responsive-scale"></div>
-      <div className="card responsive-scale"></div>
-      <div className="card responsive-scale"></div>
-      <div className="card responsive-scale"></div>
-      <div className="card responsive-scale"></div>
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
     </div>
   );
 }
