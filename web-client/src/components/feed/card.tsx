@@ -6,14 +6,18 @@ class Card extends Component {
 
     render() {
         const { } = this.props;
+        
         return ( 
             <div className="card responsive-scale" style={{backgroundImage:``}}>
-                <div className="test">
-                    <div className="card-name">
-                        <h3>Kill</h3>
-                        <h3>Me</h3>
+                    <div className="card-wrapper">
+                        <div className="card-title-price">
+                            <h3>Title</h3>
+                            <h3>$00.0</h3>
+                        </div>
+                        <div className="card-time">
+                            <h3>Time</h3>
+                        </div>
                     </div>
-                </div>
             </div>
         );
     }
