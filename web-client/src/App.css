@@ -55,6 +55,11 @@ body {
 .grid-container {
   display: grid;
   gap: 1rem;
+  grid-auto-rows: 400px;
+}
 
-  grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+@media screen and (min-width: 600px) {
+  .card {
+    grid-template-columns: repeat(auto-fit, minmax(640px, 1fr));
+  }
 }
