@@ -1,15 +1,16 @@
 .card {
-    display: flex;
-    flex-direction: column;
+    position: relative;
+    /* display: flex; */
+    /* flex-direction: column; */
     /* justify-content: center; */
     /* align-items: center; */
     background: #353535;
     box-shadow: rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem, rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;
-    height: 100%;
-    width: 100%;
+    /* height: 100%; */
+    /* width: 100%; */
     border-radius: 4px;
     transition: all 500ms;
-    overflow: hidden;
+    /* overflow: hidden; */
 
     background-size: cover;
     background-position: center;
@@ -46,11 +47,20 @@
     }
 }
 
-.test {
-    position: fixed;
+.card-wrapper {
+    position: relative;
+    height: 100%;
+    width: 100%;
 }
-.card-name {
+
+.card-title-price {
     position: absolute;
-    bottom: 0;
-    border: 2px solid white;
+    bottom: 20px;
+    left: 20px;
+}
+
+.card-time {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
 }
