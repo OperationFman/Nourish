@@ -16,6 +16,8 @@ body {
 
 .temp-header h2 {
   font-family: 'Lakki Reddy', cursive;
+  margin-block-start: 0;
+  margin-block-end: 0;
 }
 
 .grid-container {
