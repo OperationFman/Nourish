@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import Card from './components/feed/card';
 import DummyCard from './components/feed/dummy-card';
