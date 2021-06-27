@@ -1,25 +1,35 @@
+.grid-container {
+  display: grid;
+  background: white;
+  border-radius: 8px;
+  gap: 1rem;
+  grid-auto-rows: 200px;
+  margin: 8px;
+  --stagger-delay: 700ms;
+  animation: cardEntrance 800ms;
+  animation-fill-mode: backwards;
+}
+
 .card {
-    /* position: relative; */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: #e6e6e6;
-    box-shadow: rgba(3, 8, 20, 0.2) 0px 0.15rem 0.5rem, rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;
-    /* box-shadow: inset 0px -50px 70px 0px hsla(0,0%,0%,.3); */
-    height: 100%;
-    width: 100%;
-    border-radius: 8px;
-    transition: all 500ms;
-    overflow: hidden;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #e6e6e6;
+  box-shadow: rgba(3, 8, 20, 0.2) 0px 0.15rem 0.5rem, rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;
+  height: 100%;
+  width: 100%;
+  border-radius: 8px;
+  transition: all 500ms;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .card:hover {
-    box-shadow: rgba(2, 8, 20, 0.3) 0px 0.35em 1.175em, rgba(2, 8, 20, 0.08) 0px 0.175em 0.5em;
-    transform: translateY(-3px) scale(1.1);
+  box-shadow: rgba(2, 8, 20, 0.3) 0px 0.35em 1.175em, rgba(2, 8, 20, 0.08) 0px 0.175em 0.5em;
+  transform: translateY(-3px) scale(1.1);
 }
 
 @media screen and (min-width: 600px) { /* Desktop */
@@ -48,46 +58,46 @@
 }
 
 .card-wrapper {
-    position: relative;
-    height: 100%;
-    width: 100%;
+  position: relative;
+  height: 100%;
+  width: 100%;
 }
 
 .card-title-price {
-    position: absolute;
-    bottom: 5px;
-    left: 20px;
+  position: absolute;
+  bottom: 5px;
+  left: 20px;
 }
 
 .card-time {
-    position: absolute;
-    bottom: 5px;
-    right: 20px;
+  position: absolute;
+  bottom: 5px;
+  right: 20px;
 }
 
 .dummy-card-title {
-    background: rgb(220, 220, 220);
-    width: 50%;
-    border-radius: 8px;
-    position: absolute;
-    bottom:25%;
-    left: 20px;
+  background: rgb(220, 220, 220);
+  width: 50%;
+  border-radius: 8px;
+  position: absolute;
+  bottom:25%;
+  left: 20px;
 }
 
 .dummy-card-price {
-    background: rgb(220, 220, 220);
-    width: 30%;
-    border-radius: 8px;
-    position: absolute;
-    bottom: 10%;
-    left: 20px;
+  background: rgb(220, 220, 220);
+  width: 30%;
+  border-radius: 8px;
+  position: absolute;
+  bottom: 10%;
+  left: 20px;
 }
 
 .dummy-card-time {
-    background: rgb(220, 220, 220);
-    width: 20%;
-    border-radius: 8px;
-    position: absolute;
-    bottom: 10%;
-    right: 20px;
+  background: rgb(220, 220, 220);
+  width: 20%;
+  border-radius: 8px;
+  position: absolute;
+  bottom: 10%;
+  right: 20px;
 }

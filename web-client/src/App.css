@@ -4,32 +4,5 @@
 body {
   color: #fff;
   font-family: 'Roboto', sans-serif;
-  /* background-color: #B1C9BB; */
   margin: 0px;
-}
-
-.temp-header {
-  position: relative;
-  width: 100%;
-  background-color: #B1C9BB;
-  text-align: center;
-  padding-top: 10px;
-}
-
-.temp-header h2 {
-  font-family: 'Lakki Reddy', cursive;
-  margin-block-start: 0;
-  margin-block-end: 0;
-}
-
-.grid-container {
-  display: grid;
-  background: white;
-  border-radius: 8px;
-  gap: 1rem;
-  grid-auto-rows: 200px;
-  margin: 8px;
-  --stagger-delay: 700ms;
-  animation: cardEntrance 800ms;
-  animation-fill-mode: backwards;
 }

@@ -1,42 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
-import Search from './components/feed/search';
-import Sort from './components/feed/sort';
-import Card from './components/feed/card';
-import DummyCard from './components/feed/dummy-card';
-import AuthenticationButton from './components/authentication/authentication-button';
+import SearchSort from './components/feed/search-sort/search-sort';
+import Navbar from './components/navbar/navbar';
+import Feed from './components/feed/feed';
 
 function App() {
   return (
-    // <div className="App">
-    //   <header className="App-header">
-    //     {/*  Header with logo, filter and search component */}
-        
-    //   </header>
-    //     {/* Authentication component */}
-    //     {/* Feed component */}
-    // </div>
     <React.Fragment>
 
-    <div className="temp-header">
-      <h2>Nourish</h2>
-      <AuthenticationButton />
-    </div>
+      <Navbar />
 
-    <div>
-      <Search />
-      <Sort />
-    </div>
+      <SearchSort />
 
-    <div className="grid-container animated-grid">
-      <Card />
-      <Card />
-      <Card />
-      <DummyCard />
-      <DummyCard />
-      <DummyCard />
-      
-    </div>
+      <Feed />
+
     </React.Fragment>
   );
 }
