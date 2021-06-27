@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
+import Search from './components/feed/search';
+import Sort from './components/feed/sort';
 import Card from './components/feed/card';
 import DummyCard from './components/feed/dummy-card';
 import AuthenticationButton from './components/authentication/authentication-button';
@@ -19,6 +21,11 @@ function App() {
     <div className="temp-header">
       <h2>Nourish</h2>
       <AuthenticationButton />
+    </div>
+
+    <div>
+      <Search />
+      <Sort />
     </div>
 
     <div className="grid-container animated-grid">
