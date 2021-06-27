@@ -2,6 +2,7 @@
     background-color: #F8AF8E;
     border: none;
     color: white;
+    border-radius: 8px;
 }
 
 @media screen and (min-width: 600px) { /*Desktop */

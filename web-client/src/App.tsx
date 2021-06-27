@@ -17,7 +17,7 @@ function App() {
     <React.Fragment>
 
     <div className="temp-header">
-      <h1>Nourish</h1>
+      <h2>Nourish</h2>
       <AuthenticationButton />
     </div>
 
