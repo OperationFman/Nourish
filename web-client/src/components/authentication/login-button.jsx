@@ -6,7 +6,7 @@ const LoginButton = () => {
       className="login-button"
       onClick={console.log('Login clicked')}
     >
-      Log In
+    Log In
     </button>
   );
 };
