@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './App.css';
 import Card from './components/feed/card';
 import DummyCard from './components/feed/dummy-card';
+import AuthenticationButton from './components/authentication/authentication-button';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
 
     <div className="temp-header">
       <h1>Nourish</h1>
+      <AuthenticationButton />
     </div>
 
     <div className="grid-container animated-grid">
