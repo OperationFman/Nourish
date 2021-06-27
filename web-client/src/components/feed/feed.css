@@ -23,14 +23,14 @@
 }
 
 @media screen and (min-width: 600px) { /* Desktop */
-    .grid-container {
-      grid-auto-rows: 300px;
-      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    }
+  .grid-container {
+    grid-auto-rows: 300px;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  }
   }
   
 @media screen and (max-width: 600px) { /* Mobile */
-  .responsive-scale {
+  .grid-container {
     grid-template-columns: 1fr;
   }
 }
