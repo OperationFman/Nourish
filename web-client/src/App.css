@@ -1,8 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lakki+Reddy&display=swap');
 
 body {
   color: #fff;
-  font-family: 'Noto Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;
   background-color: #B1C9BB;
 }
 
@@ -11,6 +12,11 @@ body {
   width: 100%;
   background-color: #B1C9BB;
   text-align: center;
+}
+
+.temp-header h1 {
+  padding-top: 20px;
+  font-family: 'Lakki Reddy', cursive;
 }
 
 .grid-container {
