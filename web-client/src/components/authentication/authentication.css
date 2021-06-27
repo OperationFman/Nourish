@@ -3,26 +3,22 @@
     border: none;
     color: white;
     border-radius: 8px;
+    margin-bottom: 5px;
 }
 
 @media screen and (min-width: 600px) { /*Desktop */
-    .login-button {
+    .auth-button {
         position: absolute;
         right: 20px;
-        top: 0;
+        top: 5px;
         height: 80%;
         width: 200px;
     }
 }
 
 @media screen and (max-width: 600px) { /* Mobile */
-    .login-button {
+    .auth-button {
         height:40px;
         width: 200px;
     }
-}
-
-.logout-button {
-    height:40px;
-    width: 200px;
 }

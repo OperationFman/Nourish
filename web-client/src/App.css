@@ -4,7 +4,8 @@
 body {
   color: #fff;
   font-family: 'Roboto', sans-serif;
-  background-color: #B1C9BB;
+  /* background-color: #B1C9BB; */
+  margin: 0px;
 }
 
 .temp-header {
@@ -12,6 +13,7 @@ body {
   width: 100%;
   background-color: #B1C9BB;
   text-align: center;
+  padding-top: 10px;
 }
 
 .temp-header h2 {
@@ -26,7 +28,7 @@ body {
   border-radius: 8px;
   gap: 1rem;
   grid-auto-rows: 200px;
-
+  margin: 8px;
   --stagger-delay: 700ms;
   animation: cardEntrance 800ms;
   animation-fill-mode: backwards;

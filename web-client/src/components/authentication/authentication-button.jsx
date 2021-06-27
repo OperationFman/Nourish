@@ -4,7 +4,7 @@ import LogoutButton from "./logout-button";
 import './authentication.css';
 
 const AuthenticationButton = props => {
-    const isAuthenticated = false;
+    const isAuthenticated = true;
 
     return isAuthenticated ? <LogoutButton /> : <LoginButton />;
 };
