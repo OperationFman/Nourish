@@ -1,3 +1,16 @@
-.login-button {
-    color: blue;
+@media screen and (min-width: 600px) { /*Desktop */
+    .login-button {
+        position: absolute;
+        right: 20px;
+        top: 0;
+        height: 100%;
+        width: 200px;
+    }
 }
+
+@media screen and (max-width: 600px) { /* Mobile */
+    .login-button {
+        height: 40px;
+        width: 200px;
+    }
+  }
