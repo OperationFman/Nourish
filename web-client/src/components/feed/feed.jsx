@@ -5,7 +5,7 @@ import DummyCard from './dummy-card';
 
 const Feed = props => {
     return (
-        <div className="grid-container animated-grid">
+        <div className="grid-container animated-grid" >
             <Card />
             <Card />
             <Card />
