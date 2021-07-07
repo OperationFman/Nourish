@@ -6,6 +6,7 @@ import Navbar from './components/navbar/navbar';
 import SearchSort from './components/feed/search-sort/search-sort';
 import Feed from './components/feed/feed';
 import Recipe from './components/recipe/recipe';
+import CreateRecipe from './components/edit-recipe/edit-recipe-form';
 
 function App() {
   return (
@@ -20,6 +21,8 @@ function App() {
       )} />
 
       <Route path='/recipe' component={Recipe} />
+
+      <Route path="/create" component={CreateRecipe} />
     </Router>
   );
 }
