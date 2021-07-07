@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 
 const CreateRecipe = () => {
-    const { handleSubmit } = useForm();
+    const { register, handleSubmit, formState: { errors } } = useForm();
 
     const onSubmit = data => {
         console.log(data);
@@ -9,7 +9,8 @@ const CreateRecipe = () => {
 
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
-
+            <input defaultValue="test" {...register("example", { required: true })} />
+            {errors.exampleRequired && <span>This field is required</span>}
         </form>
     )
 }
