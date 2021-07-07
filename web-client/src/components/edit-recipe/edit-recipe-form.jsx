@@ -1,8 +1,16 @@
+import { useForm } from "react-hook-form";
+
 const CreateRecipe = () => {
+    const { handleSubmit } = useForm();
+
+    const onSubmit = data => {
+        console.log(data);
+    }
+
     return (
-        <div style={{color: 'black'}}>
-            <h1> hello World!</h1>
-        </div>
+        <form onSubmit={handleSubmit(onSubmit)}>
+
+        </form>
     )
 }
 
