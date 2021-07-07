@@ -11,6 +11,8 @@ const CreateRecipe = () => {
         <form onSubmit={handleSubmit(onSubmit)}>
             <input defaultValue="test" {...register("example", { required: true })} />
             {errors.exampleRequired && <span>This field is required</span>}
+
+            <input typ='submit' />
         </form>
     )
 }
