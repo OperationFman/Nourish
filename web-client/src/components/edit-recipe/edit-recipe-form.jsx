@@ -1,23 +1,5 @@
 import { useForm, useFieldArray } from "react-hook-form";
 
-const IngredientList = () => {
-    const { control, register } = useForm();
-    const { fields, append, prepend, remove, swap, move, insert } = useFieldArray({
-        control, // control props comes from useForm (optional: if you are using FormContext)
-        name: "task", // unique name for your Field Array
-        // keyName: "id", default to "id", you can change the key name
-  });
-
-  return (
-    <>
-        {fields.map((field, index) => {
-        return <input
-            key={field.id} {...register(`task.${index}.value`)} defaultValue={field.value} />
-        })}
-    </>
-  );
-}
-
 const EditRecipe = () => {
   const {
     register,
@@ -37,8 +19,8 @@ const EditRecipe = () => {
         <label htmlFor="title"> Choose a Title </label>
         <input id="title" defaultValue="" placeholder="Recipe Title" {...register("title", { required: true })} />
 
-        <label htmlFor="ingredients"> Add an Ingredient (inc. Amount) </label>
-        <IngredientList />
+        <label htmlFor="ingredients"> Add Ingredients </label>
+        <textarea id="ingredients" defaultValue="" placeholder="Add Each Ingredient" {...register("ingredients", { required: true })} /> 
 
         <label htmlFor="preparation"> Preparation </label>
         <textarea id="preparation" defaultValue="" placeholder="How to Make Your Recipe" {...register("preparation", { required: true })} /> 
