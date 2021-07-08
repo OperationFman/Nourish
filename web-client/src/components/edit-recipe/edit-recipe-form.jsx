@@ -12,7 +12,8 @@ const EditRecipe = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data);
+    const result = {...data, id: id}
+    console.log(result);
   };
 
   return (
