@@ -13,14 +13,15 @@ const EditRecipe = () => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} style={{color: 'black'}}>
-        <input defaultValue="" {...register("title", { required: true })} />
+        <input id="image" type="file" {...register('image')} />
 
-        <input type="checkbox" {...register('vegan')}  />
-        <label htmlFor="vegan"> Vegan</label>
+        <input defaultValue="" placeholder="Recipe Title" {...register("title", { required: true })} />
 
+        <input id='vegan' type="checkbox" {...register('vegan')} />
+        <label htmlFor="vegan"> Vegan </label>
 
-        {/* <input name="lactoseFree" type="checkbox" {...register('lactoseFree')} id="vegan" />
-        <label htmlFor="vegan" className="form-check-label">Vegan / Vegetarian</label> */}
+        <input id='lactoseFree' type="checkbox" {...register('lactoseFree')}  />
+        <label htmlFor="lactoseFree"> Lactose Free </label>
 
       <input type="submit" />
     </form>
