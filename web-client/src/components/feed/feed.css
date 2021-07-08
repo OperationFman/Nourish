@@ -101,6 +101,20 @@
   position: absolute;
   bottom: 10%;
   right: 20px;
+}
+
+.add-new-button {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  background-color: #B1C9BB;
+  position: fixed;
+  z-index: 100;
+  right: 25px;
+  bottom: 25px;
+  transition: all 500ms;
+  border: 5px solid white;
+  box-shadow: rgba(1, 4, 10, 0.2) 0px 0.35em 1.175em, rgba(1, 4, 10, 0.04) 0px 0.175em 0.5em;
   }
   
 .add-new-button::before {
