@@ -7,7 +7,9 @@ import DummyCard from './dummy-card';
 
 const AddNew = () => {
     return (
-        <Link to='/create'>
+        <Link to={{ pathname: "/edit",
+                    state: { id: 1234 }
+        }}>
             <div className="add-button-wrapper" style={{position: "relative"}}>
                         <div className="add-new-button" ></div> 
             </div>
@@ -20,7 +22,7 @@ const AddNew = () => {
 const Feed = props => {
     return (
         <>
-            <AddNew onCreateNewRecipe={}/>
+            <AddNew />
             <div className="grid-container animated-grid" >
                 <Card />
                 <Card />
