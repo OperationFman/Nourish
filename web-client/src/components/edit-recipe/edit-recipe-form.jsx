@@ -18,6 +18,7 @@ const EditRecipe = () => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} style={{color: 'black'}}>
+      {console.log(id)}
         <label htmlFor="image"> Upload Image </label>
         <input id="image" type="file" {...register('image')} />
 
