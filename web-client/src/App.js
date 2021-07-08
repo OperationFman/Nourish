@@ -22,7 +22,7 @@ function App() {
 
       <Route path='/recipe' component={Recipe} />
 
-      <Route path="/create" component={EditRecipe} />
+      <Route path="/edit" component={EditRecipe} />
     </Router>
   );
 }
