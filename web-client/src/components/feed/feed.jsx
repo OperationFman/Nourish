@@ -1,7 +1,17 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './feed.css';
+
 import Card from './card';
 import DummyCard from './dummy-card';
+
+const AddNew = () => {
+    return (
+        <div className="add-button-wrapper" style={{position: "relative"}}>
+            <div className="add-new-button" ></div>
+        </div>
+    )
+}
 
 const Feed = props => {
     return (
@@ -12,6 +22,7 @@ const Feed = props => {
             <DummyCard />
             <DummyCard />
             <DummyCard />
+            <AddNew />
         </div>
     );
 };
