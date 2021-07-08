@@ -7,23 +7,27 @@ import DummyCard from './dummy-card';
 
 const AddNew = () => {
     return (
-        <div className="add-button-wrapper" style={{position: "relative"}}>
-            <div className="add-new-button" ></div>
-        </div>
+        <Link to='/create'>
+            <div className="add-button-wrapper" style={{position: "relative"}}>
+                        <div className="add-new-button" ></div> 
+            </div>
+        </Link>
     )
 }
 
 const Feed = props => {
     return (
-        <div className="grid-container animated-grid" >
-            <Card />
-            <Card />
-            <Card />
-            <DummyCard />
-            <DummyCard />
-            <DummyCard />
+        <>
             <AddNew />
-        </div>
+            <div className="grid-container animated-grid" >
+                <Card />
+                <Card />
+                <Card />
+                <DummyCard />
+                <DummyCard />
+                <DummyCard />
+            </div>
+        </>
     );
 };
  
