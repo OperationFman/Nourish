@@ -1,20 +1,23 @@
 import { useForm } from "react-hook-form";
 
-const CreateRecipe = () => {
-    const { register, handleSubmit, formState: { errors } } = useForm();
+const EditRecipe = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
-    const onSubmit = data => {
-        console.log(data);
-    }
+  const onSubmit = (data) => {
+    console.log(data);
+  };
 
-    return (
-        <form onSubmit={handleSubmit(onSubmit)}>
-            <input defaultValue="test" {...register("example", { required: true })} />
-            {errors.exampleRequired && <span>This field is required</span>}
+  return (
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <input defaultValue="" {...register("example", { required: true })} />
 
-            <input typ='submit' />
-        </form>
-    )
-}
+      <input type="submit" />
+    </form>
+  );
+};
 
-export default CreateRecipe;
+export default EditRecipe;
