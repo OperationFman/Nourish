@@ -1,6 +1,10 @@
 import { useForm, useFieldArray } from "react-hook-form";
+import { useLocation } from "react-router-dom";
 
 const EditRecipe = () => {
+  const location = useLocation();
+  const { id } = location.state;
+
   const {
     register,
     handleSubmit,
