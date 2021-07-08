@@ -6,9 +6,11 @@ import Card from './card';
 import DummyCard from './dummy-card';
 
 const AddNew = () => {
+    const random_number = Math.floor(Math.random() * 999999);
+    
     return (
         <Link to={{ pathname: "/edit",
-                    state: { id: 1234 }
+                    state: { id: random_number }
         }}>
             <div className="add-button-wrapper" style={{position: "relative"}}>
                         <div className="add-new-button" ></div> 
