@@ -38,11 +38,33 @@
     grid-auto-rows: 300px;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   }
+
+  .add-new-button {
+    width: 100px;
+    height: 100px;
   }
+
+  .add-new-button::before {
+    height:100px;
+    width:100px;
+    font-size:100px;
+  }
+}
   
 @media screen and (max-width: 600px) { /* Mobile */
   .grid-container {
     grid-template-columns: 1fr;
+  }
+
+  .add-new-button {
+    width: 60px;
+    height: 60px;
+  }
+
+  .add-new-button::before {
+    height:60px;
+    width:60px;
+    font-size:60px;
   }
 }
 
@@ -105,8 +127,6 @@
 
 .add-new-button {
   border-radius: 50%;
-  width: 100px;
-  height: 100px;
   background-color: #B1C9BB;
   position: fixed;
   z-index: 100;
@@ -119,9 +139,6 @@
   
 .add-new-button::before {
   content: "+";
-  height:100px;
-  width:100px;
-  font-size:100px;
   display:flex;
   flex-direction:row;
   align-items:center;
