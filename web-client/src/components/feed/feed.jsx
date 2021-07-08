@@ -15,10 +15,12 @@ const AddNew = () => {
     )
 }
 
+
+
 const Feed = props => {
     return (
         <>
-            <AddNew />
+            <AddNew onCreateNewRecipe={}/>
             <div className="grid-container animated-grid" >
                 <Card />
                 <Card />
