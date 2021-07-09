@@ -1,0 +1,50 @@
+@media screen and (min-width: 600px) { /* Desktop */
+    .recipe-form-container {
+        border: 2px solid blue;
+        width: 600px;
+        margin: auto;
+    }
+}
+    
+@media screen and (max-width: 600px) { /* Mobile */
+    .recipe-form-container {
+        border: 2px solid red;
+        padding: 5%;
+    }
+}
+
+label {
+    display: block;
+}
+
+#image {
+    margin-bottom: 20px;
+}
+
+#title {
+    margin-bottom: 20px;
+}
+
+#ingredients {
+    margin-bottom: 20px;
+}
+
+#preparation {
+    margin-bottom: 20px;
+}
+
+#hours {
+    margin-bottom: 20px;
+}
+
+#minutes {
+    margin-bottom: 20px;
+}
+
+#vegan {
+    margin-bottom: 20px;
+}
+
+#lactoseFree {
+    margin-bottom: 20px;
+}
