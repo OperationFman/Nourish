@@ -31,6 +31,12 @@ const EditRecipe = () => {
         <label htmlFor="preparation"> Preparation </label>
         <textarea id="preparation" defaultValue="" placeholder="How to Make Your Recipe" {...register("preparation", { required: true })} /> 
 
+        <label for="hours">Hours to Prepare</label>
+        <input type="number" id="hours" name="hours" pattern="^-?[0-59]\d*\.?\d*$"  />
+
+        <label for="minutes">Minutes to Prepare</label>
+        <input type="number" id="minutes" name="minutes" pattern="^-?[0-59]\d*\.?\d*$" />
+
         <input id='vegan' type="checkbox" {...register('vegan')} />
         <label htmlFor="vegan"> Vegan </label>
 
