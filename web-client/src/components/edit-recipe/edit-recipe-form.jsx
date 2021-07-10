@@ -6,6 +6,7 @@ import './edit-recipe-form.css';
 const EditRecipe = () => {
   const location = useLocation();
   const { id } = location.state;
+  const authorId = 123456;
 
   const {
     register,
@@ -14,7 +15,7 @@ const EditRecipe = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    const result = {...data, id: id}
+    const result = {...data, id: id, authorId: authorId}
     console.log(result);
   };
 
@@ -48,7 +49,7 @@ const EditRecipe = () => {
           <input id='lactoseFree' type="checkbox" {...register('lactoseFree')}  />
 
           <label htmlFor="image">Image</label>
-          <input id="image" type="file" {...register('image', { required: true })} />
+          <input id="image" type="file" {...register('image')} />
 
           <br/>
         <input id="submit" type="submit" />
