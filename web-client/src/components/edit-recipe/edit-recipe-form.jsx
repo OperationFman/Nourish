@@ -23,13 +23,13 @@ const EditRecipe = () => {
         {console.log(id)}
 
           <label htmlFor="title">Recipe Title</label>
-          <input id="title" defaultValue="" placeholder="Souvalaki" {...register("title", { required: true })} />
+          <input id="title" defaultValue="" placeholder="" {...register("title", { required: true })} />
 
           <label htmlFor="ingredients">Ingredients </label>
           <textarea id="ingredients" defaultValue="" placeholder="Seperate by comma, e.g 12 eggs, 1L milk, bread, etc.." {...register("ingredients", { required: true })} /> 
 
           <label htmlFor="preparation"> Preparation </label>
-          <textarea id="preparation" defaultValue="" placeholder="How to Make Your Recipe" {...register("preparation", { required: true })} /> 
+          <textarea id="preparation" defaultValue="" placeholder="" {...register("preparation", { required: true })} /> 
 
           <label htmlFor="hours">Hours to Prepare</label>
           <input type="number" id="hours" name="hours" pattern="^-?[0-59]\d*\.?\d*$"  />
