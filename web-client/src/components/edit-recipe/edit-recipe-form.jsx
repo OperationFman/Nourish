@@ -1,5 +1,6 @@
 import { useForm, useFieldArray } from "react-hook-form";
 import { useLocation } from "react-router-dom";
+import { Link } from 'react-router-dom';
 import './edit-recipe-form.css';
 
 const EditRecipe = () => {
@@ -37,6 +38,9 @@ const EditRecipe = () => {
           <label htmlFor="minutes">Minutes to Prepare</label>
           <input type="number" id="minutes" placeholder="30" name="minutes" pattern="^-?[0-59]\d*\.?\d*$" />
 
+          <label htmlFor="cost">Total Cost ($)</label>
+          <input type="cost" id="cost" placeholder="5.00" name="cost" pattern="^-?[0-59]\d*\.?\d*$" />
+
           <label htmlFor="vegan"> Vegan </label>
           <input id='vegan' type="checkbox" {...register('vegan')} />
 
@@ -44,13 +48,13 @@ const EditRecipe = () => {
           <input id='lactoseFree' type="checkbox" {...register('lactoseFree')}  />
 
           <label htmlFor="image">Image</label>
-          <input id="image" type="file" {...register('image')} />
+          <input id="image" type="file" {...register('image', { required: true })} />
 
           <br/>
         <input id="submit" type="submit" />
       </form>
 
-      <button className="cancel-button"> Cancel </button>
+      <Link to='/'> <button className="cancel-button"> Cancel </button> </Link>
     </div>
   );
 };

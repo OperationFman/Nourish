@@ -4,7 +4,7 @@
   border-radius: 8px;
   gap: 1rem;
   grid-auto-rows: 200px;
-  margin: 8px;
+  margin: 20px;
   --stagger-delay: 700ms;
   animation: cardEntrance 800ms;
   animation-fill-mode: backwards;
