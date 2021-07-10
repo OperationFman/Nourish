@@ -9,7 +9,7 @@
 @media screen and (max-width: 600px) { /* Mobile */
     .recipe-form-container {
         border: 2px solid red;
-        padding: 5%;
+        padding: 7%;
     }
 }
 
@@ -19,40 +19,57 @@ label {
 
 #title {
     margin-bottom: 20px;
+    width: 75%;
+    height: 30px;
+    border: 2px solid rgb(143, 143, 143);
+    border-radius: 5px;
 }
 
 #ingredients {
     margin-bottom: 20px;
     width: 100%;
-    height: 100px;
+    height: 120px;
+    border: 2px solid rgb(143, 143, 143);
+    border-radius: 5px;
 }
 
 #preparation {
     margin-bottom: 20px;
     width: 100%;
     height: 100px;
+    border: 2px solid rgb(143, 143, 143);
+    border-radius: 5px;
 }
 
 #hours {
     margin-bottom: 20px;
-    width: 40px;
+    width: 50px;
+    height: 30px;
+    border: 2px solid rgb(143, 143, 143);
+    border-radius: 5px;
 }
 
 #minutes {
     margin-bottom: 20px;
-    width: 40px;
+    width: 50px;
+    height: 30px;
+    border: 2px solid rgb(143, 143, 143);
+    border-radius: 5px;
 }
 
 #vegan {
     margin-bottom: 20px;
-    margin-top: 10px;
+    margin-top: 5px;
     transform:scale(1.5, 1.5);
 }
 
 #lactoseFree {
     margin-bottom: 20px;
-    margin-top: 10px;
+    margin-top: 5px;
     transform:scale(1.5, 1.5);
+}
+
+input[type="file"] {
 }
 
 #image {
@@ -63,6 +80,15 @@ label {
     width: 200px;
     height: 40px;
     background-color: #F8AF8E;
+    border: none;
+    color: white;
+}
+
+.cancel-button {
+    margin-top: 10px;
+    width: 200px;
+    height: 40px;
+    background-color: #b4b4b4;
     border: none;
     color: white;
 }
