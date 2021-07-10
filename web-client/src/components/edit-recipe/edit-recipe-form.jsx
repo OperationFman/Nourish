@@ -16,6 +16,7 @@ const EditRecipe = () => {
 
   const onSubmit = (data) => {
     const result = {...data, id: id, authorId: authorId}
+
     console.log(result);
   };
 
@@ -23,6 +24,7 @@ const EditRecipe = () => {
     <div className="recipe-form-container">
       <form onSubmit={handleSubmit(onSubmit)} style={{color: 'black'}}>
         {console.log(id)}
+
           <label htmlFor="title">Recipe Title</label>
           {errors?.title?.type === "required" && <p>Title is required</p>}
           <input id="title" defaultValue="" placeholder="" {...register("title", { required: true })} />
@@ -41,7 +43,7 @@ const EditRecipe = () => {
 
           <label htmlFor="cost">Total Cost ($)</label>
           {errors?.cost?.type === "pattern" && <p>Cost should be whole number or a whole number + decimal. e.g 1, 1.0, 1.5, 0.6 etc</p>}
-          <input type="cost" id="cost" placeholder="5.00" name="cost" pattern="^-?[0-59]\d*\.?\d*$" {...register("preparation", { required: true, pattern: '[+-]?([0-9]*[.])?[0-9]+' })}/>
+          <input type="cost" id="cost" placeholder="5.00" name="cost" pattern="^-?[0-59]\d*\.?\d*$" {...register("cost", { required: true, pattern: '[+-]?([0-9]*[.])?[0-9]+' })}/>
 
           <label htmlFor="vegan"> Vegan </label>
           <input id='vegan' type="checkbox" {...register('vegan')} />
