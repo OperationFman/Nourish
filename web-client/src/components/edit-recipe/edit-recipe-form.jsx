@@ -14,9 +14,18 @@ const EditRecipe = () => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {
-    const result = {...data, id: id, authorId: authorId}
+  const verifyFormData = (data) => {
+    if ('authorId' in data && 'id' in data && 'ingredients' in data && 'preparation' in data && 'hours' in data && 'minutes' in data && 'cost' in data && 'image' in data) {
+      return true
+    }
+    return false
+  }
 
+  const onSubmit = (data) => {
+    let result = {...data, id: id, authorId: authorId}
+    result = !result.hours && {...result, hours: 0}
+    const isFormValid = verifyFormData(result)
+    console.log(isFormValid);
     console.log(result);
   };
 
