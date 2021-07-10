@@ -39,11 +39,12 @@ const EditRecipe = () => {
           <input type="number" id="hours" placeholder="0" name="hours" pattern="^-?[0-59]\d*\.?\d*$"  />
 
           <label htmlFor="minutes">Minutes to Prepare</label>
-          <input type="number" id="minutes" placeholder="30" name="minutes" pattern="^-?[0-59]\d*\.?\d*$" />
+          <input type="number" id="minutes" placeholder="30" name="minutes" pattern="^-?[0-59]\d*\.?\d*$" {...register("minutes", { required: true })} />
 
           <label htmlFor="cost">Total Cost ($)</label>
           {errors?.cost?.type === "pattern" && <p>Cost should be whole number or a whole number + decimal. e.g 1, 1.0, 1.5, 0.6 etc</p>}
-          <input type="cost" id="cost" placeholder="5.00" name="cost" pattern="^-?[0-59]\d*\.?\d*$" {...register("cost", { required: true, pattern: '[+-]?([0-9]*[.])?[0-9]+' })}/>
+          <input id="cost" placeholder="5.00" name="cost" pattern="^-?[0-59]\d*\.?\d*$" {...register("cost", { required: true, pattern: '[+-]?([0-9]*[.])?[0-9]+' })}/>
+          {errors?.cost?.type === "required" && <p>Cost is required</p>}
 
           <label htmlFor="vegan"> Vegan </label>
           <input id='vegan' type="checkbox" {...register('vegan')} />
