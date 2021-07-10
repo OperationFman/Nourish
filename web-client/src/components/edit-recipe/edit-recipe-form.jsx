@@ -21,10 +21,8 @@ const EditRecipe = () => {
     <div className="recipe-form-container">
       <form onSubmit={handleSubmit(onSubmit)} style={{color: 'black'}}>
         {console.log(id)}
-          <label htmlFor="image">Upload Image</label>
-          <input id="image" type="file" {...register('image')} />
 
-          <label id="title-label" htmlFor="title">Choose a Title</label>
+          <label htmlFor="title">Choose a Title</label>
           <input id="title" defaultValue="" placeholder="Recipe Title" {...register("title", { required: true })} />
 
           <label htmlFor="ingredients"> Add Ingredients </label>
@@ -45,7 +43,11 @@ const EditRecipe = () => {
           <label htmlFor="lactoseFree"> Lactose Free </label>
           <input id='lactoseFree' type="checkbox" {...register('lactoseFree')}  />
 
-        <input type="submit" />
+          <label htmlFor="image">Upload Image</label>
+          <input id="image" type="file" {...register('image')} />
+
+          <br/>
+        <input id="submit" type="submit" />
       </form>
     </div>
   );
