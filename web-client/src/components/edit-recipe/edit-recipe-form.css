@@ -17,34 +17,52 @@ label {
     display: block;
 }
 
-#image {
-    margin-bottom: 20px;
-}
-
 #title {
     margin-bottom: 20px;
 }
 
 #ingredients {
     margin-bottom: 20px;
+    width: 100%;
+    height: 100px;
 }
 
 #preparation {
     margin-bottom: 20px;
+    width: 100%;
+    height: 100px;
 }
 
 #hours {
     margin-bottom: 20px;
+    width: 40px;
 }
 
 #minutes {
     margin-bottom: 20px;
+    width: 40px;
 }
 
 #vegan {
     margin-bottom: 20px;
+    margin-top: 10px;
+    transform:scale(1.5, 1.5);
 }
 
 #lactoseFree {
     margin-bottom: 20px;
+    margin-top: 10px;
+    transform:scale(1.5, 1.5);
+}
+
+#image {
+    margin-bottom: 20px;
+}
+
+#submit {
+    width: 200px;
+    height: 40px;
+    background-color: #F8AF8E;
+    border: none;
+    color: white;
 }
