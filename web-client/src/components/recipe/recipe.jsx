@@ -6,10 +6,10 @@ import { useForm, useFieldArray, Controller, useWatch } from "react-hook-form";
 const Recipe = (props) => {
     const { register, control, handleSubmit, reset, watch } = useForm({
         defaultValues: {
-          test: [{ firstName: "Bill"}]
+          ingredients: [{ ingredient: "Bill"}]
         }
       });
-    const { fields, append, remove} = useFieldArray(
+    const { fields, append, prepend, remove, swap, move, insert } = useFieldArray(
     {
         control,
         name: "ingredients"
@@ -26,13 +26,13 @@ const Recipe = (props) => {
         </div>
 
         <form onSubmit={handleSubmit(onSubmit)}>
-
         <ul>
         {fields.map((item, index) => {
             return (
             <li key={item.id}>
-                <input defaultValue={`${item.firstName}`} // make sure to set up defaultValue
-                {...register(`test.${index}.firstName`)}
+                <input
+                defaultValue={`${item.ingredient}`} // make sure to set up defaultValue
+                {...register(`ingredients.${index}.ingredient`)}
                 />
 
                 <button type="button" onClick={() => remove(index)}>
@@ -46,13 +46,13 @@ const Recipe = (props) => {
         <button
             type="button"
             onClick={() => {
-            append({ firstName: "appendBill"});
+            append({ ingredient: "appendBill"});
             }}
         >
             append
         </button>
 
-        
+
         <input type="submit" />
         </form>
 </>
