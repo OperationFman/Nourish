@@ -1,14 +1,13 @@
 @media screen and (min-width: 600px) { /* Desktop */
     .recipe-form-container {
-        border: 2px solid blue;
         width: 600px;
         margin: auto;
+        padding-top: 20px;
     }
 }
     
 @media screen and (max-width: 600px) { /* Mobile */
     .recipe-form-container {
-        border: 2px solid red;
         padding: 7%;
     }
 }
@@ -69,8 +68,19 @@ label {
     transform:scale(1.5, 1.5);
 }
 
-input[type="file"] {
+input[type=file] {
+    color: grey;
+    font-style: italic;
 }
+input[type=file]::file-selector-button {
+    width: 100px;
+    height: 30px;
+    background-color: #F8AF8E;
+    border: none;
+    color: white;
+    margin-right: 10px;
+    margin-top: 2px;
+  }
 
 #image {
     margin-bottom: 20px;
