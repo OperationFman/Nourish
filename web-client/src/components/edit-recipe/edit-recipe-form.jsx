@@ -58,6 +58,7 @@ const EditRecipe = () => {
 
           <label htmlFor="cost">Total Cost ($)</label>
           {errors?.cost?.type === "pattern" && <p>Cost should be whole number or a whole number + decimal. e.g 1, 1.0, 1.5, 0.6 etc</p>}
+          {errors?.cost?.type === "required" && <p>Required</p>}
           <input id="cost" placeholder="5.00" name="cost" pattern="^-?[0-59]\d*\.?\d*$" {...register("cost", { required: true, pattern: '[+-]?([0-9]*[.])?[0-9]+' })}/>
 
           <label htmlFor="vegan"> Vegan </label>
