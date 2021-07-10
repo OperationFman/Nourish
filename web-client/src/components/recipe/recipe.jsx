@@ -1,22 +1,28 @@
 import { Link } from 'react-router-dom';
 import './recipe.css';
-
 import { useForm, useFieldArray } from "react-hook-form";
+import React from "react";
+
 
 const Recipe = (props) => {
     const { register, control, handleSubmit } = useForm({
         defaultValues: {
-          ingredients: [{ ingredient: "Pasta"}]
+          food: [{ name: "pizza" }],
+          drinks: [{ name: "martini" }]
         }
       });
-    const { fields, append, remove} = useFieldArray(
-    {
-        control,
-        name: "ingredients"
-    }
-    );
+    const {
+    fields: foodFields,
+    append: foodAppend,
+    remove: foodRemove
+    } = useFieldArray({ control, name: "food" });
+    const {
+    fields: drinkFields,
+    append: drinkAppend,
+    remove: drinkRemove
+    } = useFieldArray({ control, name: "drinks" });
 
-    const onSubmit = (data) => console.log(data);
+    const onSubmit = data => console.log("data", data);
 
     return (
         <>
@@ -27,31 +33,53 @@ const Recipe = (props) => {
 
         <form onSubmit={handleSubmit(onSubmit)}>
         <ul>
-        {fields.map((item, index) => {
+        <h5>FOOD</h5>
+
+        {foodFields.map((item, index) => {
             return (
             <li key={item.id}>
-                <input
-                defaultValue={`${item.ingredient}`} 
-                {...register(`ingredients.${index}.ingredient`, { required: true })}
-                />
+                <input name={`food[${index}].name`} {...register('foods')} />
 
-                <button type="button" onClick={() => remove(index)}>
+                <button type="button" onClick={() => foodRemove(index)}>
                 Delete
                 </button>
             </li>
             );
         })}
-        </ul>
-
         <button
             type="button"
-            onClick={() => {append({ ingredient: ""});}}
-        >Add</button>
-
+            onClick={() => {
+            foodAppend({ name: "" });
+            }}
+        >
+            append food
+        </button>
+        </ul>
+        <ul>
+        <h5>DRINKS</h5>
+        {drinkFields.map((item, index) => {
+            return (
+            <li key={item.id}>
+                <input name={`drinks[${index}].name`} {...register('drink')} />
+                <button type="button" onClick={() => drinkRemove(index)}>
+                Delete
+                </button>
+            </li>
+            );
+        })}
+        <button
+            type="button"
+            onClick={() => {
+            drinkAppend({ name: "" });
+            }}
+        >
+            append drinks
+        </button>
+        </ul>
 
         <input type="submit" />
         </form>
-</>
+    </>
     )
 }
 

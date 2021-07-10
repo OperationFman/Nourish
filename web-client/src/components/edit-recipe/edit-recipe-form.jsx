@@ -11,15 +11,16 @@ const EditRecipe = () => {
 
   const { register, handleSubmit, control, formState: { errors } } = useForm({
     defaultValues: {
-      ingredients: [{ ingredient: "Pasta"}]
+      ingredients: [{ ingredient: "" }],
+      preparation: [{ prep: "" }]
     }
   });
 
-  const { fields, append, remove} = useFieldArray(
-    {
-        control,
-        name: "ingredients"
-    });
+  const { fields: ingredientFields, append: ingredientAppend, remove: ingredientRemove} = useFieldArray(
+    {control, name: "ingredients"});
+
+  const { fields: preparationFields, append: preparationAppend, remove: preparationRemove} = useFieldArray(
+    {control, name: "ingredients"});
 
   const verifyFormData = (data) => {
     if ('authorId' in data && 'id' in data && 'ingredients' in data && 'preparation' in data && 'hours' in data && 'minutes' in data && 'cost' in data) {
@@ -30,12 +31,13 @@ const EditRecipe = () => {
 
   const onSubmit = (data) => {
     let result = {...data, id: id, authorId: authorId}
-    result = !result.hours && {...result, hours: 0}
-    const isFormValid = verifyFormData(result)
-    if (isFormValid) {
-      history.push("/");
-      console.log(result)
-    }
+    // result = !result.hours && {...result, hours: 0}
+    // const isFormValid = verifyFormData(result)
+    // if (isFormValid) {
+    //   history.push("/");
+    //   console.log(result)
+    // }
+    console.log(result)
   };
 
   return (
@@ -48,7 +50,7 @@ const EditRecipe = () => {
           <input id="title" defaultValue="" placeholder="" {...register("title", { required: true })} />
 
           <ul>
-          {fields.map((item, index) => {
+          {ingredientFields.map((item, index) => {
               return (
               <li key={item.id}>
                   <input
@@ -56,7 +58,7 @@ const EditRecipe = () => {
                   {...register(`ingredients.${index}.ingredient`, { required: true })}
                   />
 
-                  <button type="button" onClick={() => remove(index)}>
+                  <button type="button" onClick={() => ingredientRemove(index)}>
                   Delete
                   </button>
               </li>
@@ -66,16 +68,40 @@ const EditRecipe = () => {
 
           <button
               type="button"
-              onClick={() => {append({ ingredient: ""});}}
+              onClick={() => {ingredientAppend({ ingredient: ""});}}
+          >Add</button>
+
+
+
+          <ul>
+          {preparationFields.map((item, index) => {
+              return (
+              <li key={item.id}>
+                  <input
+                  defaultValue={`${item.preparations}`} 
+                  {...register(`preparations.${index}.preparation`, { required: true })}
+                  />
+
+                  <button type="button" onClick={() => preparationRemove(index)}>
+                  Delete
+                  </button>
+              </li>
+              );
+          })}
+          </ul>
+
+          <button
+              type="button"
+              onClick={() => {preparationAppend({ preparation: ""});}}
           >Add</button>
 
           {/* <label htmlFor="ingredients">Ingredients </label>
           {errors?.ingredients?.type === "required" && <p>Required</p>}
           <textarea id="ingredients" defaultValue="" placeholder="Separate by comma, e.g 12 eggs, 1L milk, bread, etc.." {...register("ingredients", { required: true })} />  */}
 
-          <label htmlFor="preparation"> Preparation Steps</label>
+          {/* <label htmlFor="preparation"> Preparation Steps</label>
           {errors?.preparation?.type === "required" && <p>Required</p>}
-          <textarea id="preparation" defaultValue="" placeholder="" {...register("preparation", { required: true })} /> 
+          <textarea id="preparation" defaultValue="" placeholder="" {...register("preparation", { required: true })} />  */}
 
           <label htmlFor="hours">Hours to Prepare</label>
           <input type="number" id="hours" placeholder="0" name="hours" pattern="^-?[0-59]\d*\.?\d*$"  />
