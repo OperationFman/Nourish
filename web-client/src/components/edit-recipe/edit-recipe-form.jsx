@@ -22,11 +22,11 @@ const EditRecipe = () => {
       <form onSubmit={handleSubmit(onSubmit)} style={{color: 'black'}}>
         {console.log(id)}
 
-          <label htmlFor="title">Choose a Title</label>
-          <input id="title" defaultValue="" placeholder="Recipe Title" {...register("title", { required: true })} />
+          <label htmlFor="title">Recipe Title</label>
+          <input id="title" defaultValue="" placeholder="Souvalaki" {...register("title", { required: true })} />
 
-          <label htmlFor="ingredients"> Add Ingredients </label>
-          <textarea id="ingredients" defaultValue="" placeholder="Add Each Ingredient" {...register("ingredients", { required: true })} /> 
+          <label htmlFor="ingredients">Ingredients </label>
+          <textarea id="ingredients" defaultValue="" placeholder="Seperate by comma, e.g 12 eggs, 1L milk, bread, etc.." {...register("ingredients", { required: true })} /> 
 
           <label htmlFor="preparation"> Preparation </label>
           <textarea id="preparation" defaultValue="" placeholder="How to Make Your Recipe" {...register("preparation", { required: true })} /> 
@@ -43,12 +43,14 @@ const EditRecipe = () => {
           <label htmlFor="lactoseFree"> Lactose Free </label>
           <input id='lactoseFree' type="checkbox" {...register('lactoseFree')}  />
 
-          <label htmlFor="image">Upload Image</label>
+          <label htmlFor="image">Image</label>
           <input id="image" type="file" {...register('image')} />
 
           <br/>
         <input id="submit" type="submit" />
       </form>
+
+      <button className="cancel-button"> Cancel </button>
     </div>
   );
 };
