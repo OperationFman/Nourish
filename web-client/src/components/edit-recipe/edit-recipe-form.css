@@ -73,6 +73,7 @@ input[type=file] {
     color: grey;
     font-style: italic;
 }
+
 input[type=file]::file-selector-button {
     width: 100px;
     height: 30px;
@@ -81,7 +82,12 @@ input[type=file]::file-selector-button {
     color: white;
     margin-right: 10px;
     margin-top: 2px;
-  }
+}
+
+input[type=file]::file-selector-button:hover {
+    background-color: #f7a179;
+    transition: all 500ms;
+}
 
 #image {
     margin-bottom: 20px;
@@ -95,6 +101,11 @@ input[type=file]::file-selector-button {
     color: white;
 }
 
+#submit:hover {
+    background-color: #f7a179;
+    transition: all 500ms;
+}
+
 .cancel-button {
     margin-top: 10px;
     width: 200px;
@@ -102,4 +113,9 @@ input[type=file]::file-selector-button {
     background-color: #b4b4b4;
     border: none;
     color: white;
+}
+
+.cancel-button:hover {
+    background-color: #9e9e9e;
+    transition: all 500ms;
 }
