@@ -31,7 +31,11 @@ label {
       opacity: 1;
       transform: scale(1);
     }
-  }
+}
+
+p {
+    color: rgb(224, 52, 52);
+}
 
 #title {
     margin-bottom: 20px;
@@ -132,6 +136,7 @@ input[type=file]::file-selector-button:hover {
 
 .cancel-button {
     margin-top: 10px;
+    margin-bottom: 100px;
     width: 200px;
     height: 40px;
     background-color: #b4b4b4;
