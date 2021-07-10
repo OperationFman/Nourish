@@ -32,10 +32,10 @@ const EditRecipe = () => {
           <textarea id="preparation" defaultValue="" placeholder="" {...register("preparation", { required: true })} /> 
 
           <label htmlFor="hours">Hours to Prepare</label>
-          <input type="number" id="hours" name="hours" pattern="^-?[0-59]\d*\.?\d*$"  />
+          <input type="number" id="hours" placeholder="0" name="hours" pattern="^-?[0-59]\d*\.?\d*$"  />
 
           <label htmlFor="minutes">Minutes to Prepare</label>
-          <input type="number" id="minutes" name="minutes" pattern="^-?[0-59]\d*\.?\d*$" />
+          <input type="number" id="minutes" placeholder="30" name="minutes" pattern="^-?[0-59]\d*\.?\d*$" />
 
           <label htmlFor="vegan"> Vegan </label>
           <input id='vegan' type="checkbox" {...register('vegan')} />
