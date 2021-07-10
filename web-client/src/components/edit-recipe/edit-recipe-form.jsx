@@ -23,14 +23,14 @@ const EditRecipe = () => {
     <div className="recipe-form-container">
       <form onSubmit={handleSubmit(onSubmit)} style={{color: 'black'}}>
         {console.log(id)}
-
           <label htmlFor="title">Recipe Title</label>
+          {errors?.title?.type === "required" && <p>Title is required</p>}
           <input id="title" defaultValue="" placeholder="" {...register("title", { required: true })} />
 
           <label htmlFor="ingredients">Ingredients </label>
-          <textarea id="ingredients" defaultValue="" placeholder="Seperate by comma, e.g 12 eggs, 1L milk, bread, etc.." {...register("ingredients", { required: true })} /> 
+          <textarea id="ingredients" defaultValue="" placeholder="Separate by comma, e.g 12 eggs, 1L milk, bread, etc.." {...register("ingredients", { required: true })} /> 
 
-          <label htmlFor="preparation"> Preparation </label>
+          <label htmlFor="preparation"> Preparation Steps</label>
           <textarea id="preparation" defaultValue="" placeholder="" {...register("preparation", { required: true })} /> 
 
           <label htmlFor="hours">Hours to Prepare</label>
@@ -40,7 +40,8 @@ const EditRecipe = () => {
           <input type="number" id="minutes" placeholder="30" name="minutes" pattern="^-?[0-59]\d*\.?\d*$" />
 
           <label htmlFor="cost">Total Cost ($)</label>
-          <input type="cost" id="cost" placeholder="5.00" name="cost" pattern="^-?[0-59]\d*\.?\d*$" />
+          {errors?.cost?.type === "pattern" && <p>Cost should be whole number or a whole number + decimal. e.g 1, 1.0, 1.5, 0.6 etc</p>}
+          <input type="cost" id="cost" placeholder="5.00" name="cost" pattern="^-?[0-59]\d*\.?\d*$" {...register("preparation", { required: true, pattern: '[+-]?([0-9]*[.])?[0-9]+' })}/>
 
           <label htmlFor="vegan"> Vegan </label>
           <input id='vegan' type="checkbox" {...register('vegan')} />
