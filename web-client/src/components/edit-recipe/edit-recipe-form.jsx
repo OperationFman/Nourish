@@ -9,11 +9,17 @@ const EditRecipe = () => {
   const history = useHistory();
   const authorId = 123456;
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
+  const { register, handleSubmit, control, formState: { errors } } = useForm({
+    defaultValues: {
+      ingredients: [{ ingredient: "Pasta"}]
+    }
+  });
+
+  const { fields, append, remove} = useFieldArray(
+    {
+        control,
+        name: "ingredients"
+    });
 
   const verifyFormData = (data) => {
     if ('authorId' in data && 'id' in data && 'ingredients' in data && 'preparation' in data && 'hours' in data && 'minutes' in data && 'cost' in data) {
@@ -41,9 +47,31 @@ const EditRecipe = () => {
           {errors?.title?.type === "required" && <p>Required</p>}
           <input id="title" defaultValue="" placeholder="" {...register("title", { required: true })} />
 
-          <label htmlFor="ingredients">Ingredients </label>
+          <ul>
+          {fields.map((item, index) => {
+              return (
+              <li key={item.id}>
+                  <input
+                  defaultValue={`${item.ingredient}`} 
+                  {...register(`ingredients.${index}.ingredient`, { required: true })}
+                  />
+
+                  <button type="button" onClick={() => remove(index)}>
+                  Delete
+                  </button>
+              </li>
+              );
+          })}
+          </ul>
+
+          <button
+              type="button"
+              onClick={() => {append({ ingredient: ""});}}
+          >Add</button>
+
+          {/* <label htmlFor="ingredients">Ingredients </label>
           {errors?.ingredients?.type === "required" && <p>Required</p>}
-          <textarea id="ingredients" defaultValue="" placeholder="Separate by comma, e.g 12 eggs, 1L milk, bread, etc.." {...register("ingredients", { required: true })} /> 
+          <textarea id="ingredients" defaultValue="" placeholder="Separate by comma, e.g 12 eggs, 1L milk, bread, etc.." {...register("ingredients", { required: true })} />  */}
 
           <label htmlFor="preparation"> Preparation Steps</label>
           {errors?.preparation?.type === "required" && <p>Required</p>}
@@ -80,3 +108,5 @@ const EditRecipe = () => {
 };
 
 export default EditRecipe;
+
+// Here goes

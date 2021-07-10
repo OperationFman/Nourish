@@ -1,15 +1,15 @@
 import { Link } from 'react-router-dom';
 import './recipe.css';
 
-import { useForm, useFieldArray, Controller, useWatch } from "react-hook-form";
+import { useForm, useFieldArray } from "react-hook-form";
 
 const Recipe = (props) => {
-    const { register, control, handleSubmit, reset, watch } = useForm({
+    const { register, control, handleSubmit } = useForm({
         defaultValues: {
-          ingredients: [{ ingredient: "Bill"}]
+          ingredients: [{ ingredient: "Pasta"}]
         }
       });
-    const { fields, append, prepend, remove, swap, move, insert } = useFieldArray(
+    const { fields, append, remove} = useFieldArray(
     {
         control,
         name: "ingredients"
@@ -31,8 +31,8 @@ const Recipe = (props) => {
             return (
             <li key={item.id}>
                 <input
-                defaultValue={`${item.ingredient}`} // make sure to set up defaultValue
-                {...register(`ingredients.${index}.ingredient`)}
+                defaultValue={`${item.ingredient}`} 
+                {...register(`ingredients.${index}.ingredient`, { required: true })}
                 />
 
                 <button type="button" onClick={() => remove(index)}>
@@ -45,12 +45,8 @@ const Recipe = (props) => {
 
         <button
             type="button"
-            onClick={() => {
-            append({ ingredient: "appendBill"});
-            }}
-        >
-            append
-        </button>
+            onClick={() => {append({ ingredient: ""});}}
+        >Add</button>
 
 
         <input type="submit" />
