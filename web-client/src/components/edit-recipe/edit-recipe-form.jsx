@@ -51,25 +51,27 @@ const EditRecipe = () => {
             {ingredientsFields.map((item, index) => {
             return (
                 <li key={item.id}>
-                <input placeholder="e.g. '2 Cups of Flour'" {...register(`ingredients.${index}.name`, { required: true })} />
-                <button type="button" onClick={() => ingredientsRemove(index)}> Delete </button>
+                <input id="ingredient-input" placeholder="e.g. '2 Cups of Flour'" {...register(`ingredients.${index}.name`, { required: true })} />
+                <button style={{borderRadius: '50%'}} type="button" onClick={() => ingredientsRemove(index)}> X </button>
                 </li>
             );
             })}
             <button type="button" onClick={() => { ingredientsAppend({ name: "" }) }}> Add </button>
           </ul>
           
+        <br/>
+
           <label>Preparation Steps</label>
           <ul>
               {preparationFields.map((item, index) => {
               return (
                   <li key={item.id}>
-                  <input placeholder="e.g. 'Whisk Sugar and Eggs for 3 minutes'" {...register(`preparation.${index}.name`, { required: true })} />
-                  <button type="button" onClick={() => preparationRemove(index)}> Delete </button>
+                  <input id="preparation-input" placeholder="e.g. 'Whisk Sugar and Eggs for 3 minutes'" {...register(`preparation.${index}.name`, { required: true })} />
+                  <button style={{borderRadius: '50%' }} type="button" onClick={() => preparationRemove(index)}> X </button>
                   </li>
               );
               })}
-              <button type="button" onClick={() => { preparationAppend({ name: "" }) }}> Add </button>
+              <button style={{marginLeft: '0px', backgroundColor: '#F8AF8E', width: '100px', height: '30px'}} type="button" onClick={() => { preparationAppend({ name: "" }) }}> Add Step </button>
           </ul>
 
           <label htmlFor="hours">Hours to Prepare</label>
