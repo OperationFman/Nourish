@@ -5,8 +5,8 @@ import './App.css';
 import Navbar from './components/navbar/navbar';
 import SearchSort from './components/feed/search-sort/search-sort';
 import Feed from './components/feed/feed';
-import Recipe from './components/recipe/recipe';
-import EditRecipe from './components/edit-recipe/edit-recipe-form';
+import Recipe from './components/display-recipe/display-recipe';
+import EditRecipe from './components/edit-recipe/edit-recipe';
 
 function App() {
   return (

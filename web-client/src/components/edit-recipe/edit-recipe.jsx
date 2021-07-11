@@ -1,7 +1,7 @@
 import { useForm, useFieldArray } from "react-hook-form";
 import { useLocation, useHistory  } from "react-router-dom";
 import { Link } from 'react-router-dom';
-import './edit-recipe-form.css';
+import './edit-recipe.css';
 
 const EditRecipe = () => {
   const location = useLocation();
