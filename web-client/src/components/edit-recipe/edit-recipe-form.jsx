@@ -46,11 +46,12 @@ const EditRecipe = () => {
           {errors?.title?.type === "required" && <p>Required</p>}
           <input id="title" defaultValue="" placeholder="" {...register("title", { required: true })} />
 
+          <label>Ingredients</label>
           <ul>
             {ingredientsFields.map((item, index) => {
             return (
                 <li key={item.id}>
-                <input {...register(`ingredients.${index}.name`, { required: true })} />
+                <input placeholder="e.g. '2 Cups of Flour'" {...register(`ingredients.${index}.name`, { required: true })} />
                 <button type="button" onClick={() => ingredientsRemove(index)}> Delete </button>
                 </li>
             );
@@ -58,11 +59,12 @@ const EditRecipe = () => {
             <button type="button" onClick={() => { ingredientsAppend({ name: "" }) }}> Add </button>
           </ul>
           
+          <label>Preparation Steps</label>
           <ul>
               {preparationFields.map((item, index) => {
               return (
                   <li key={item.id}>
-                  <input {...register(`preparation.${index}.name`, { required: true })} />
+                  <input placeholder="e.g. 'Whisk Sugar and Eggs for 3 minutes'" {...register(`preparation.${index}.name`, { required: true })} />
                   <button type="button" onClick={() => preparationRemove(index)}> Delete </button>
                   </li>
               );
