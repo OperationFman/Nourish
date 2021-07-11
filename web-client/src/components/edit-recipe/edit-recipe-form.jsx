@@ -9,13 +9,7 @@ const EditRecipe = () => {
   const history = useHistory();
   const authorId = 123456;
 
-  const { register, handleSubmit, control, formState: { errors } } = useForm({
-    defaultValues: {
-      ingredients: [{ name: "" }],
-      preparation: [{ name: "" }]
-    }
-  });
-
+  const { register, handleSubmit, control, formState: { errors } } = useForm();
   const { fields: ingredientsFields, append: ingredientsAppend, remove: ingredientsRemove} = useFieldArray({ control, name: "ingredients" });
   const { fields: preparationFields, append: preparationAppend, remove: preparationRemove} = useFieldArray({ control, name: "preparation" });
 
@@ -28,13 +22,12 @@ const EditRecipe = () => {
 
   const onSubmit = (data) => {
     let result = {...data, id: id, authorId: authorId}
-    // result = !result.hours && {...result, hours: 0}
-    // const isFormValid = verifyFormData(result)
-    // if (isFormValid) {
-    //   history.push("/");
-    //   console.log(result)
-    // }
-    console.log(result)
+    result = !result.hours && {...result, hours: 0}
+    const isFormValid = verifyFormData(result)
+    if (isFormValid) {
+      history.push("/");
+      console.log(result)
+    }
   };
 
   return (
@@ -42,7 +35,7 @@ const EditRecipe = () => {
       <form onSubmit={handleSubmit(onSubmit)} style={{color: 'black'}}>
         {console.log(id)}
 
-          <label htmlFor="title">Recipe Title</label>
+          <label> Recipe Title </label>
           {errors?.title?.type === "required" && <p>Required</p>}
           <input id="title" defaultValue="" placeholder="" {...register("title", { required: true })} />
 
@@ -52,14 +45,14 @@ const EditRecipe = () => {
             return (
                 <li key={item.id}>
                 <input id="ingredient-input" placeholder="e.g. '2 Cups of Flour'" {...register(`ingredients.${index}.name`, { required: true })} />
-                <button style={{borderRadius: '50%'}} type="button" onClick={() => ingredientsRemove(index)}> X </button>
+                <button id="remove-button" type="button" onClick={() => ingredientsRemove(index)}> X </button>
                 </li>
             );
             })}
-            <button type="button" onClick={() => { ingredientsAppend({ name: "" }) }}> Add </button>
+            <button id="add-items" type="button" onClick={() => { ingredientsAppend({ name: "" }) }}> Add Ingredient </button>
           </ul>
           
-        <br/>
+          <br/>
 
           <label>Preparation Steps</label>
           <ul>
@@ -67,35 +60,34 @@ const EditRecipe = () => {
               return (
                   <li key={item.id}>
                   <input id="preparation-input" placeholder="e.g. 'Whisk Sugar and Eggs for 3 minutes'" {...register(`preparation.${index}.name`, { required: true })} />
-                  <button style={{borderRadius: '50%' }} type="button" onClick={() => preparationRemove(index)}> X </button>
+                  <button id="remove-button" type="button" onClick={() => preparationRemove(index)}> X </button>
                   </li>
               );
               })}
-              <button style={{marginLeft: '0px', backgroundColor: '#F8AF8E', width: '100px', height: '30px'}} type="button" onClick={() => { preparationAppend({ name: "" }) }}> Add Step </button>
+              <button  id="add-items" type="button" onClick={() => { preparationAppend({ name: "" }) }}> Add Step </button>
           </ul>
 
-          <label htmlFor="hours">Hours to Prepare</label>
-          <input type="number" id="hours" placeholder="0" name="hours" pattern="^-?[0-59]\d*\.?\d*$"  />
+          <label>Hours to Prepare</label>
+          <input type="number" id="small-input" placeholder="0" name="hours" pattern="^-?[0-59]\d*\.?\d*$"  />
 
-          <label htmlFor="minutes">Minutes to Prepare</label>
+          <label>Minutes to Prepare</label>
           {errors?.minutes?.type === "required" && <p>Required</p>}
-          <input type="number" id="minutes" placeholder="30" name="minutes" pattern="^-?[0-59]\d*\.?\d*$" {...register("minutes", { required: true })} />
+          <input type="number" id="small-input" placeholder="30" name="minutes" pattern="^-?[0-59]\d*\.?\d*$" {...register("minutes", { required: true })} />
 
-          <label htmlFor="cost">Total Cost ($)</label>
+          <label>Total Cost ($)</label>
           {errors?.cost?.type === "pattern" && <p>Cost should be whole number or a whole number + decimal. e.g 1, 1.0, 1.5, 0.6 etc</p>}
           {errors?.cost?.type === "required" && <p>Required</p>}
-          <input id="cost" placeholder="5.00" name="cost" pattern="^-?[0-59]\d*\.?\d*$" {...register("cost", { required: true, pattern: '[+-]?([0-9]*[.])?[0-9]+' })}/>
+          <input id="small-input" placeholder="5.00" name="cost" pattern="^-?[0-59]\d*\.?\d*$" {...register("cost", { required: true, pattern: '[+-]?([0-9]*[.])?[0-9]+' })}/>
 
-          <label htmlFor="vegan"> Vegan </label>
-          <input id='vegan' type="checkbox" {...register('vegan')} />
+          <label> Vegan </label>
+          <input id='checkbox' type="checkbox" {...register('vegan')} />
 
-          <label htmlFor="lactoseFree"> Lactose Free </label>
-          <input id='lactoseFree' type="checkbox" {...register('lactoseFree')}  />
+          <label> Lactose Free </label>
+          <input id='checkbox' type="checkbox" {...register('lactoseFree')}  />
 
-          <label htmlFor="image">Image</label>
+          <label>Image</label>
           <input id="image" type="file" {...register('image')} />
 
-          <br/>
         <input id="submit" type="submit" />
       </form>
 
@@ -105,5 +97,3 @@ const EditRecipe = () => {
 };
 
 export default EditRecipe;
-
-// Here goes

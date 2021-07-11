@@ -13,14 +13,6 @@
     }
 }
 
-.recipe-form-container {
-    animation: cardEntrance 800ms;
-}
-
-label {
-    display: block;
-}
-
 @keyframes formEntrance {
     from {
       opacity: 0.25;
@@ -33,16 +25,16 @@ label {
     }
 }
 
-p {
-    color: rgb(224, 52, 52);
+.recipe-form-container {
+    animation: cardEntrance 800ms;
 }
 
-#title {
-    margin-bottom: 20px;
-    width: 75%;
-    height: 30px;
-    border: 2px solid rgb(143, 143, 143);
-    border-radius: 5px;
+label {
+    display: block;
+}
+
+p {
+    color: rgb(224, 52, 52);
 }
 
 ul {
@@ -57,6 +49,30 @@ ul button{
     color: white;
 }
 
+#title {
+    margin-bottom: 20px;
+    width: 75%;
+    height: 30px;
+    border: 2px solid rgb(143, 143, 143);
+    border-radius: 5px;
+}
+
+#remove-button {
+    border-radius: 50%;
+    list-style-type: none;
+    margin-left: 10px;
+    background-color: #b4b4b4;
+    border: none;
+    color: white;
+}
+
+#add-items {
+    margin: 0px 0px 10px 0px;
+    padding: 0px 20px;
+    background-color: #F8AF8E;
+    height: 30px;
+}
+
 #ingredient-input {
     margin-bottom: 20px;
     width: 60%;
@@ -67,13 +83,13 @@ ul button{
 
 #preparation-input {
     margin-bottom: 20px;
-    width: 60%;
+    width: 80%;
     height: 30px;
     border: 2px solid rgb(143, 143, 143);
     border-radius: 5px;
 }
 
-#hours {
+#small-input { /* Hours, Minutes, Cost */
     margin-bottom: 20px;
     width: 50px;
     height: 30px;
@@ -81,29 +97,7 @@ ul button{
     border-radius: 5px;
 }
 
-#minutes {
-    margin-bottom: 20px;
-    width: 50px;
-    height: 30px;
-    border: 2px solid rgb(143, 143, 143);
-    border-radius: 5px;
-}
-
-#cost {
-    margin-bottom: 20px;
-    width: 50px;
-    height: 30px;
-    border: 2px solid rgb(143, 143, 143);
-    border-radius: 5px;
-}
-
-#vegan {
-    margin-bottom: 20px;
-    margin-top: 5px;
-    transform:scale(1.5, 1.5);
-}
-
-#lactoseFree {
+#checkbox {
     margin-bottom: 20px;
     margin-top: 5px;
     transform:scale(1.5, 1.5);
