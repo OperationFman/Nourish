@@ -87,7 +87,7 @@ const EditRecipe = () => {
           <input id="image" type="file" autocomplete="off" {...register('image')} />
 
           <br/><br/>
-        <input id="submit" type="submit" />
+        <input label="submit" id="submit" type="submit" />
       </form>
 
       <Link to='/'> <button className="cancel-button"> Cancel </button> </Link>
