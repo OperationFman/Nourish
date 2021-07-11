@@ -27,6 +27,7 @@
 
 .recipe-form-container {
     animation: cardEntrance 800ms;
+    color: black;
 }
 
 label {

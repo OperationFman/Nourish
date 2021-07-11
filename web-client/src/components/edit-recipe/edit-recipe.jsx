@@ -32,12 +32,12 @@ const EditRecipe = () => {
 
   return (
     <div className="recipe-form-container">
-      <form onSubmit={handleSubmit(onSubmit)} style={{color: 'black'}}>
+      <form onSubmit={handleSubmit(onSubmit)}>
         {console.log(id)}
 
           <label> Recipe Title </label>
           {errors?.title?.type === "required" && <p>Required</p>}
-          <input id="title" defaultValue="" placeholder="" autocomplete="off" {...register("title", { required: true })} />
+          <input label="title" id="title" defaultValue="" placeholder="" autocomplete="off" {...register("title", { required: true })} />
 
           <label>Ingredients</label>
           <ul>
