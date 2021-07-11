@@ -11,16 +11,13 @@ const EditRecipe = () => {
 
   const { register, handleSubmit, control, formState: { errors } } = useForm({
     defaultValues: {
-      ingredients: [{ ingredient: "" }],
-      preparation: [{ prep: "" }]
+      ingredients: [{ name: "" }],
+      preparation: [{ name: "" }]
     }
   });
 
-  const { fields: ingredientFields, append: ingredientAppend, remove: ingredientRemove} = useFieldArray(
-    {control, name: "ingredients"});
-
-  const { fields: preparationFields, append: preparationAppend, remove: preparationRemove} = useFieldArray(
-    {control, name: "ingredients"});
+  const { fields: ingredientsFields, append: ingredientsAppend, remove: ingredientsRemove} = useFieldArray({ control, name: "ingredients" });
+  const { fields: preparationFields, append: preparationAppend, remove: preparationRemove} = useFieldArray({ control, name: "preparation" });
 
   const verifyFormData = (data) => {
     if ('authorId' in data && 'id' in data && 'ingredients' in data && 'preparation' in data && 'hours' in data && 'minutes' in data && 'cost' in data) {
@@ -50,58 +47,28 @@ const EditRecipe = () => {
           <input id="title" defaultValue="" placeholder="" {...register("title", { required: true })} />
 
           <ul>
-          {ingredientFields.map((item, index) => {
-              return (
-              <li key={item.id}>
-                  <input
-                  defaultValue={`${item.ingredient}`} 
-                  {...register(`ingredients.${index}.ingredient`, { required: true })}
-                  />
-
-                  <button type="button" onClick={() => ingredientRemove(index)}>
-                  Delete
-                  </button>
-              </li>
-              );
-          })}
+            {ingredientsFields.map((item, index) => {
+            return (
+                <li key={item.id}>
+                <input {...register(`ingredients.${index}.name`, { required: true })} />
+                <button type="button" onClick={() => ingredientsRemove(index)}> Delete </button>
+                </li>
+            );
+            })}
+            <button type="button" onClick={() => { ingredientsAppend({ name: "" }) }}> Add </button>
           </ul>
-
-          <button
-              type="button"
-              onClick={() => {ingredientAppend({ ingredient: ""});}}
-          >Add</button>
-
-
-
+          
           <ul>
-          {preparationFields.map((item, index) => {
+              {preparationFields.map((item, index) => {
               return (
-              <li key={item.id}>
-                  <input
-                  defaultValue={`${item.preparations}`} 
-                  {...register(`preparations.${index}.preparation`, { required: true })}
-                  />
-
-                  <button type="button" onClick={() => preparationRemove(index)}>
-                  Delete
-                  </button>
-              </li>
+                  <li key={item.id}>
+                  <input {...register(`preparation.${index}.name`, { required: true })} />
+                  <button type="button" onClick={() => preparationRemove(index)}> Delete </button>
+                  </li>
               );
-          })}
+              })}
+              <button type="button" onClick={() => { preparationAppend({ name: "" }) }}> Add </button>
           </ul>
-
-          <button
-              type="button"
-              onClick={() => {preparationAppend({ preparation: ""});}}
-          >Add</button>
-
-          {/* <label htmlFor="ingredients">Ingredients </label>
-          {errors?.ingredients?.type === "required" && <p>Required</p>}
-          <textarea id="ingredients" defaultValue="" placeholder="Separate by comma, e.g 12 eggs, 1L milk, bread, etc.." {...register("ingredients", { required: true })} />  */}
-
-          {/* <label htmlFor="preparation"> Preparation Steps</label>
-          {errors?.preparation?.type === "required" && <p>Required</p>}
-          <textarea id="preparation" defaultValue="" placeholder="" {...register("preparation", { required: true })} />  */}
 
           <label htmlFor="hours">Hours to Prepare</label>
           <input type="number" id="hours" placeholder="0" name="hours" pattern="^-?[0-59]\d*\.?\d*$"  />
