@@ -88,6 +88,7 @@ const EditRecipe = () => {
           <label>Image</label>
           <input id="image" type="file" {...register('image')} />
 
+          <br/><br/>
         <input id="submit" type="submit" />
       </form>
 

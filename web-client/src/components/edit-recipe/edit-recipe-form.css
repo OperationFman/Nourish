@@ -66,11 +66,21 @@ ul button{
     color: white;
 }
 
+#remove-button:hover {
+    background-color: #9e9e9e;
+    transition: all 500ms;
+}
+
 #add-items {
     margin: 0px 0px 10px 0px;
     padding: 0px 20px;
     background-color: #F8AF8E;
     height: 30px;
+}
+
+#add-items:hover {
+    background-color: #f7a179;
+    transition: all 500ms;
 }
 
 #ingredient-input {
