@@ -45,6 +45,34 @@ p {
     border-radius: 5px;
 }
 
+ul {
+    list-style-type: none;
+}
+
+ul button{
+    list-style-type: none;
+    margin-left: 10px;
+    background-color: #b4b4b4;
+    border: none;
+    color: white;
+}
+
+#ingredient-input {
+    margin-bottom: 20px;
+    width: 60%;
+    height: 30px;
+    border: 2px solid rgb(143, 143, 143);
+    border-radius: 5px;
+}
+
+#preparation-input {
+    margin-bottom: 20px;
+    width: 60%;
+    height: 30px;
+    border: 2px solid rgb(143, 143, 143);
+    border-radius: 5px;
+}
+
 #hours {
     margin-bottom: 20px;
     width: 50px;
