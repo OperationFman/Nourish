@@ -1,0 +1,13 @@
+.header {
+    position: relative;
+    width: 100%;
+    background-color: #B1C9BB;
+    text-align: center;
+    padding-top: 10px;
+  }
+  
+.header h2 {
+    font-family: 'Lakki Reddy', cursive;
+    margin-block-start: 0;
+    margin-block-end: 0;
+  }

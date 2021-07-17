@@ -1,0 +1,33 @@
+.search-sort-container {
+    display: grid;
+    background: white;
+    border-radius: 8px;
+    gap: 1rem;
+    grid-template-columns: 10fr 1fr;
+    margin: 10px 0px;
+}
+  
+.search {
+    display: flex;
+    flex-direction: column;
+    margin: 0px 15px;
+}
+  
+.search input {
+    height: 28px;
+    width: 100%;
+}
+  
+.sort {
+    display: flex;
+    flex-direction: column;
+    right: 0;
+    color: black;
+    align-items: flex-end;
+    padding: 2px 15px 0px 15px;
+}
+  
+.sort img {
+    height: 30px;
+    width: 30px;
+}
