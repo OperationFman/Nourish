@@ -1,11 +1,13 @@
+import React from 'react';
 import { useForm, useFieldArray } from "react-hook-form";
 import { useLocation, useHistory  } from "react-router-dom";
 import { Link } from 'react-router-dom';
 import './edit-recipe.css';
 
 const EditRecipe = () => {
-  const location = useLocation();
-  const { id } = location.state;
+  // const location = useLocation();
+  // const { id } = location.state;
+  const id = 1234;
   const history = useHistory();
   const authorId = 123456;
 
