@@ -39,7 +39,7 @@ const EditRecipe = () => {
 
           <label> Recipe Title </label>
           {errors?.title?.type === "required" && <p>Required</p>}
-          <input label="title" id="title" defaultValue="" placeholder="" autoComplete="off" {...register("title", { required: true })} />
+          <input label="title" data-testid="title" id="title" defaultValue="" placeholder="" autoComplete="off" {...register("title", { required: true })} />
 
           <label>Ingredients</label>
           <ul>
@@ -68,11 +68,11 @@ const EditRecipe = () => {
           </ul>
 
           <label>Hours to Prepare</label>
-          <input type="number" id="small-input" placeholder="0" name="hours" pattern="^-?[0-59]\d*\.?\d*$" autoComplete="off" />
+          <input type="number" data-testid="hours" id="small-input" placeholder="0" name="hours" pattern="^-?[0-59]\d*\.?\d*$" autoComplete="off" />
 
           <label>Minutes to Prepare</label>
           {errors?.minutes?.type === "required" && <p>Required</p>}
-          <input type="number" id="small-input" placeholder="30" name="minutes" pattern="^-?[0-59]\d*\.?\d*$" autoComplete="off" {...register("minutes", { required: true })} />
+          <input type="number" data-testid="minutes"id="small-input" placeholder="30" name="minutes" pattern="^-?[0-59]\d*\.?\d*$" autoComplete="off" {...register("minutes", { required: true })} />
 
           <label>Total Cost ($)</label>
           {errors?.cost?.type === "pattern" && <p>Cost should be whole number or a whole number + decimal. e.g 1, 1.0, 1.5, 0.6 etc</p>}
