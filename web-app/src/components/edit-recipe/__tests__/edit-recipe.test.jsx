@@ -4,6 +4,7 @@ import renderer from 'react-test-renderer';
 
 import EditRecipe from '../edit-recipe';
 
+
 test('render component', () => {
     
     render(

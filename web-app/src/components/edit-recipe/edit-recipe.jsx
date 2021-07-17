@@ -37,14 +37,14 @@ const EditRecipe = () => {
 
           <label> Recipe Title </label>
           {errors?.title?.type === "required" && <p>Required</p>}
-          <input label="title" id="title" defaultValue="" placeholder="" autocomplete="off" {...register("title", { required: true })} />
+          <input label="title" id="title" defaultValue="" placeholder="" autoComplete="off" {...register("title", { required: true })} />
 
           <label>Ingredients</label>
           <ul>
             {ingredientsFields.map((item, index) => {
             return (
                 <li key={item.id}>
-                <input id="ingredient-input" placeholder="e.g. '2 Cups of Flour'" autocomplete="off" {...register(`ingredients.${index}.name`, { required: true })} />
+                <input id="ingredient-input" placeholder="e.g. '2 Cups of Flour'" autoComplete="off" {...register(`ingredients.${index}.name`, { required: true })} />
                 <button id="remove-button" type="button" onClick={() => ingredientsRemove(index)}> X </button>
                 </li>
             );
@@ -57,7 +57,7 @@ const EditRecipe = () => {
               {preparationFields.map((item, index) => {
               return (
                   <li key={item.id}>
-                  <input id="preparation-input" placeholder="e.g. 'Whisk Sugar and Eggs for 3 minutes'" autocomplete="off" {...register(`preparation.${index}.name`, { required: true })} />
+                  <input id="preparation-input" placeholder="e.g. 'Whisk Sugar and Eggs for 3 minutes'" autoComplete="off" {...register(`preparation.${index}.name`, { required: true })} />
                   <button id="remove-button" type="button" onClick={() => preparationRemove(index)}> X </button>
                   </li>
               );
@@ -66,25 +66,25 @@ const EditRecipe = () => {
           </ul>
 
           <label>Hours to Prepare</label>
-          <input type="number" id="small-input" placeholder="0" name="hours" pattern="^-?[0-59]\d*\.?\d*$" autocomplete="off" />
+          <input type="number" id="small-input" placeholder="0" name="hours" pattern="^-?[0-59]\d*\.?\d*$" autoComplete="off" />
 
           <label>Minutes to Prepare</label>
           {errors?.minutes?.type === "required" && <p>Required</p>}
-          <input type="number" id="small-input" placeholder="30" name="minutes" pattern="^-?[0-59]\d*\.?\d*$" autocomplete="off" {...register("minutes", { required: true })} />
+          <input type="number" id="small-input" placeholder="30" name="minutes" pattern="^-?[0-59]\d*\.?\d*$" autoComplete="off" {...register("minutes", { required: true })} />
 
           <label>Total Cost ($)</label>
           {errors?.cost?.type === "pattern" && <p>Cost should be whole number or a whole number + decimal. e.g 1, 1.0, 1.5, 0.6 etc</p>}
           {errors?.cost?.type === "required" && <p>Required</p>}
-          <input id="small-input" placeholder="5.00" name="cost" pattern="^-?[0-59]\d*\.?\d*$" autocomplete="off" {...register("cost", { required: true, pattern: '[+-]?([0-9]*[.])?[0-9]+' })}/>
+          <input id="small-input" placeholder="5.00" name="cost" pattern="^-?[0-59]\d*\.?\d*$" autoComplete="off" {...register("cost", { required: true, pattern: '[+-]?([0-9]*[.])?[0-9]+' })}/>
 
           <label> Vegan </label>
-          <input id='checkbox' type="checkbox" autocomplete="off" {...register('vegan')} />
+          <input id='checkbox' type="checkbox" autoComplete="off" {...register('vegan')} />
 
           <label> Lactose Free </label>
-          <input id='checkbox' type="checkbox" autocomplete="off" {...register('lactoseFree')}  />
+          <input id='checkbox' type="checkbox" autoComplete="off" {...register('lactoseFree')}  />
 
           <label>Image</label>
-          <input id="image" type="file" autocomplete="off" {...register('image')} />
+          <input id="image" type="file" autoComplete="off" {...register('image')} />
 
           <br/><br/>
         <input label="submit" id="submit" type="submit" />
