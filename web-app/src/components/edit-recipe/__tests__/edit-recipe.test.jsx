@@ -1,7 +1,6 @@
 import React from 'react';
 import { render, screen, cleanup, fireEvent } from '@testing-library/react';
 import { MemoryRouter } from "react-router-dom";
-import renderer from 'react-test-renderer';
 import EditRecipe from '../edit-recipe';
 
 
@@ -88,3 +87,4 @@ describe('form elements initializing', () => {
         expect(imageElement).toBeTruthy()
     })
 })
+
