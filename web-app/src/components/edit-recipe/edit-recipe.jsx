@@ -35,8 +35,6 @@ const EditRecipe = () => {
   return (
     <div className="recipe-form-container">
       <form onSubmit={handleSubmit(onSubmit)}>
-        {console.log(id)}
-
           <label> Recipe Title </label>
           {errors?.title?.type === "required" && <p>Required</p>}
           <input label="title" data-testid="title" id="title" defaultValue="" placeholder="" autoComplete="off" {...register("title", { required: true })} />
@@ -72,21 +70,21 @@ const EditRecipe = () => {
 
           <label>Minutes to Prepare</label>
           {errors?.minutes?.type === "required" && <p>Required</p>}
-          <input type="number" data-testid="minutes"id="small-input" placeholder="30" name="minutes" pattern="^-?[0-59]\d*\.?\d*$" autoComplete="off" {...register("minutes", { required: true })} />
+          <input type="number" data-testid="minutes" id="small-input" placeholder="30" name="minutes" pattern="^-?[0-59]\d*\.?\d*$" autoComplete="off" {...register("minutes", { required: true })} />
 
           <label>Total Cost ($)</label>
           {errors?.cost?.type === "pattern" && <p>Cost should be whole number or a whole number + decimal. e.g 1, 1.0, 1.5, 0.6 etc</p>}
           {errors?.cost?.type === "required" && <p>Required</p>}
-          <input id="small-input" placeholder="5.00" name="cost" pattern="^-?[0-59]\d*\.?\d*$" autoComplete="off" {...register("cost", { required: true, pattern: '[+-]?([0-9]*[.])?[0-9]+' })}/>
+          <input id="small-input" data-testid="cost" placeholder="5.00" name="cost" pattern="^-?[0-59]\d*\.?\d*$" autoComplete="off" {...register("cost", { required: true, pattern: '[+-]?([0-9]*[.])?[0-9]+' })}/>
 
-          <label> Vegan </label>
-          <input id='checkbox' type="checkbox" autoComplete="off" {...register('vegan')} />
+          <label>Vegan</label>
+          <input id='checkbox' data-testid="vegan" type="checkbox" autoComplete="off" {...register('vegan')} />
 
-          <label> Lactose Free </label>
-          <input id='checkbox' type="checkbox" autoComplete="off" {...register('lactoseFree')}  />
+          <label>Lactose Free</label>
+          <input id='checkbox'data-testid="lactose" type="checkbox" autoComplete="off" {...register('lactoseFree')}  />
 
           <label>Image</label>
-          <input id="image" type="file" autoComplete="off" {...register('image')} />
+          <input id="image" data-testid="image" type="file" autoComplete="off" {...register('image')} />
 
           <br/><br/>
         <input label="submit" id="submit" type="submit" />
