@@ -25,7 +25,26 @@ describe('form elements initializing', () => {
         expect(titleElement.value).toBe("")
     });
 
-    // Input field arrays
+    it('ingredients input does not render', () => {
+        const addingredientsButton = screen.getByTestId('ingredients-add-button');
+        expect(addingredientsButton).toBeTruthy()
+
+        fireEvent.click(addingredientsButton)
+        const ingredientsElement = screen.getByTestId('ingredients-item');
+
+        expect(ingredientsElement).toBeTruthy()
+    });
+
+
+    it('preparation input does not render', () => {
+        const addPreparationButton = screen.getByTestId('preparation-add-button');
+        expect(addPreparationButton).toBeTruthy()
+
+        fireEvent.click(addPreparationButton)
+        const preparationElement = screen.getByTestId('preparation-item');
+
+        expect(preparationElement).toBeTruthy()
+    });
 
     it('hours input renders correctly', () => {
         const hoursElement = screen.getByTestId('hours');

@@ -44,12 +44,12 @@ const EditRecipe = () => {
             {ingredientsFields.map((item, index) => {
             return (
                 <li key={item.id}>
-                <input id="ingredient-input" placeholder="e.g. '2 Cups of Flour'" autoComplete="off" {...register(`ingredients.${index}.name`, { required: true })} />
+                <input id="ingredient-input" data-testid="ingredients-item" placeholder="e.g. '2 Cups of Flour'" autoComplete="off" {...register(`ingredients.${index}.name`, { required: true })} />
                 <button id="remove-button" type="button" onClick={() => ingredientsRemove(index)}> X </button>
                 </li>
             );
             })}
-            <button id="add-items" type="button" onClick={() => { ingredientsAppend({ name: "" }) }}> Add Ingredient </button>
+            <button id="add-items" data-testid="ingredients-add-button" type="button" onClick={() => { ingredientsAppend({ name: "" }) }}> Add Ingredient </button>
           </ul>
 
           <label>Preparation Steps</label>
@@ -57,12 +57,12 @@ const EditRecipe = () => {
               {preparationFields.map((item, index) => {
               return (
                   <li key={item.id}>
-                  <input id="preparation-input" placeholder="e.g. 'Whisk Sugar and Eggs for 3 minutes'" autoComplete="off" {...register(`preparation.${index}.name`, { required: true })} />
+                  <input id="preparation-input" data-testid="preparation-item" placeholder="e.g. 'Whisk Sugar and Eggs for 3 minutes'" autoComplete="off" {...register(`preparation.${index}.name`, { required: true })} />
                   <button id="remove-button" type="button" onClick={() => preparationRemove(index)}> X </button>
                   </li>
               );
               })}
-              <button  id="add-items" type="button" onClick={() => { preparationAppend({ name: "" }) }}> Add Step </button>
+              <button id="add-items" data-testid="preparation-add-button" type="button" onClick={() => { preparationAppend({ name: "" }) }}> Add Step </button>
           </ul>
 
           <label>Hours to Prepare</label>
