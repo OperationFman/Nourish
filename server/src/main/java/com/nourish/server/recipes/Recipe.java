@@ -1,28 +1,45 @@
 package com.nourish.server.recipes;
 
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
 public class Recipe {
 
-    private String id;
+    private int id;
     private String title;
-    private String authorid;
+    private int authorid;
     private String[][] ingredients;
     private String[][] preparation;
     private int hours;
     private int minutes;
-    private float cost;
+    private double cost;
     private boolean vegan;
     private boolean lactose;
     private String image;
 
-    public String getId() {
+//    public Recipe() {
+//
+//    }
+
+    public Recipe(int id, String title, int authorid, String[][] ingredients, String[][] preparation, int hours, int minutes, double cost, boolean vegan, boolean lactose, String image) {
+        super();
+        this.id = id;
+        this.title = title;
+        this.authorid = authorid;
+        this.ingredients = ingredients;
+        this.preparation = preparation;
+        this.hours = hours;
+        this.minutes = minutes;
+        this.cost = cost;
+        this.vegan = vegan;
+        this.lactose = lactose;
+        this.image = image;
+    }
+
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -34,11 +51,11 @@ public class Recipe {
         this.title = title;
     }
 
-    public String getAuthorid() {
+    public int getAuthorid() {
         return authorid;
     }
 
-    public void setAuthorid(String authorid) {
+    public void setAuthorid(int authorid) {
         this.authorid = authorid;
     }
 
@@ -74,11 +91,11 @@ public class Recipe {
         this.minutes = minutes;
     }
 
-    public float getCost() {
+    public double getCost() {
         return cost;
     }
 
-    public void setCost(float cost) {
+    public void setCost(double cost) {
         this.cost = cost;
     }
 
