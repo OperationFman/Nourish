@@ -17,7 +17,6 @@ const AddNew = () => {
     )
 }
 
-
 const Feed = props => {
     return (
         <>
