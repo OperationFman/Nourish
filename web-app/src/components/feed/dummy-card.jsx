@@ -12,7 +12,5 @@ const DummyCard = props => {
         </div>
     );
 }
-
-
  
 export default DummyCard;
