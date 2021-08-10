@@ -11,10 +11,13 @@ public class RecipeController {
 
     @RequestMapping("/all-recipes")
     public List<Recipe> getAllRecipes() {
+        String[] ingredients = {{0: "carrot"},{1: "cheese"}, {2: "bread"}};
+        String[] preparations = {"chop carrots", "grate cheese", "slice bread"};
+
         return Arrays.asList(
-                new Recipe(1234, "Title1", 1234, null, null, 1, 30, 5.0, false, false, "n/a"),
-                new Recipe(5678, "Title2", 5678, null, null, 1, 30, 5.0, false, false, "n/a"),
-                new Recipe(9123, "Title3", 9123, null, null, 1, 30, 5.0, false, false, "n/a")
+                new Recipe(1234, "Title1", 1234, ingredients, preparations, 1, 30, 5.0, false, false, "n/a"),
+                new Recipe(5678, "Title2", 5678, ingredients, preparations, 1, 30, 4.0, false, false, "n/a"),
+                new Recipe(9123, "Title3", 9123, ingredients, preparations, 1, 30, 3.5, false, false, "n/a")
         );
     }
 }
