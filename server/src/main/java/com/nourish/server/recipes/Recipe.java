@@ -2,13 +2,15 @@ package com.nourish.server.recipes;
 
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
+
 public class Recipe {
 
     private int id;
     private String title;
     private int authorid;
-    private String[] ingredients;
-    private String[] preparation;
+    private ArrayList ingredients;
+    private ArrayList preparation;
     private int hours;
     private int minutes;
     private double cost;
@@ -20,7 +22,7 @@ public class Recipe {
 //
 //    }
 
-    public Recipe(int id, String title, int authorid, String[] ingredients, String[] preparation, int hours, int minutes, double cost, boolean vegan, boolean lactose, String image) {
+    public Recipe(int id, String title, int authorid, ArrayList ingredients, ArrayList preparation, int hours, int minutes, double cost, boolean vegan, boolean lactose, String image) {
         super();
         this.id = id;
         this.title = title;
@@ -59,19 +61,19 @@ public class Recipe {
         this.authorid = authorid;
     }
 
-    public String[] getIngredients() {
+    public ArrayList getIngredients() {
         return ingredients;
     }
 
-    public void setIngredients(String[] ingredients) {
+    public void setIngredients(ArrayList ingredients) {
         this.ingredients = ingredients;
     }
 
-    public String[] getPreparation() {
+    public ArrayList getPreparation() {
         return preparation;
     }
 
-    public void setPreparation(String[] preparation) {
+    public void setPreparation(ArrayList preparation) {
         this.preparation = preparation;
     }
 
