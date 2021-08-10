@@ -21,13 +21,13 @@ public class Ingredient {
 
     @RequestMapping("/all-recipes")
     public List<Recipe> getAllRecipes() {
-        Ingredient[] ingredients = {new Ingredient(123, "carot"),
-                                    new Ingredient(456, "cheese"),
-                                    new Ingredient(789, "bread")};
+        List<Ingredient> = Arrays.asList(new Ingredient(0, "carot"),
+                                        new Ingredient(1, "cheese"),
+                                        new Ingredient(, "bread"));
         String[] preparations = {"chop carrots", "grate cheese", "slice bread"};
 
 
-        System.out.println(ingredients);
+        System.out.println(ingredients[0].name);
 
         return Arrays.asList(
                 new Recipe(1234, "Title1", 1234, null, null, 1, 30, 5.0, false, false, "n/a"),
