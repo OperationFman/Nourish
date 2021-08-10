@@ -10,13 +10,13 @@ import java.util.List;
 @RestController
 public class RecipeController {
 
-    public class Test {
+    public class Ingredients {
         public int id;
-        public String name;
+        public String ingredient;
 
-        public Test(int id, String name) {
+        public Ingredients(int id, String ingredient) {
             this.id = id;
-            this.name = name;
+            this.ingredient = ingredient;
         }
     }
 
@@ -25,9 +25,9 @@ public class RecipeController {
         String[] ingredients = {"carrot", "cheese", "bread"};
         String[] preparations = {"chop carrots", "grate cheese", "slice bread"};
 
-        ArrayList<Test> list = new ArrayList<Test>();
-        list.add(new Test(1,"bob"));
-        list.add(new Test(2,"steve"));
+        ArrayList<Ingredients> list = new ArrayList<Ingredients>();
+        list.add(new Ingredients(1,"carrot"));
+        list.add(new Ingredients(2,"cheese"));
 
 
 
