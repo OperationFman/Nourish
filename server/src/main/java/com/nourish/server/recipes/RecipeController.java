@@ -11,14 +11,18 @@ import java.util.List;
 public class RecipeController {
 
     public class Ingredients {
-        public int id;
-        public String ingredient;
+        public String name;
 
-        public Ingredients(int id, String ingredient) {
-            this.id = id;
-            this.ingredient = ingredient;
+        public Ingredients(String name) {
+
+            this.name = name;
         }
+
+        public String toString() {
+            return name;
+        };
     }
+
 
     @RequestMapping("/all-recipes")
     public List<Recipe> getAllRecipes() {
@@ -26,16 +30,16 @@ public class RecipeController {
         String[] preparations = {"chop carrots", "grate cheese", "slice bread"};
 
         ArrayList<Ingredients> list = new ArrayList<Ingredients>();
-        list.add(new Ingredients(1,"carrot"));
-        list.add(new Ingredients(2,"cheese"));
+        list.add(new Ingredients("carrot"));
+        list.add(new Ingredients("cheese"));
 
-
+        System.out.println(list);
 
 
         return Arrays.asList(
-                new Recipe(1234, "Title1", 1234, ingredients, preparations, 1, 30, 5.0, false, false, "n/a"),
-                new Recipe(5678, "Title2", 5678, ingredients, preparations, 1, 30, 4.0, false, false, "n/a"),
-                new Recipe(9123, "Title3", 9123, ingredients, preparations, 1, 30, 3.5, false, false, "n/a")
+                new Recipe(1234, "Title1", 1234, list, list, 1, 30, 5.0, false, false, "n/a"),
+                new Recipe(5678, "Title2", 5678, list, list, 1, 30, 4.0, false, false, "n/a"),
+                new Recipe(9123, "Title3", 9123, list, list, 1, 30, 3.5, false, false, "n/a")
         );
     }
 }
