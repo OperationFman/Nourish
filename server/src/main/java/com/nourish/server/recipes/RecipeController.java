@@ -30,14 +30,10 @@ public class RecipeController {
 
     @RequestMapping("/all-recipes")
     public List<Recipe> getAllRecipes() {
-        String[] ingredients = {"carrot", "cheese", "bread"};
-        String[] preparations = {"chop carrots", "grate cheese", "slice bread"};
 
         ArrayList<Ingredients> list = new ArrayList<Ingredients>();
         list.add(new Ingredients("carrot"));
         list.add(new Ingredients("cheese"));
-
-        System.out.println(list);
 
 
         return Arrays.asList(
